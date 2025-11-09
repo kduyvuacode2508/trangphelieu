@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Giới thiệu Công ty TNHH Hải Cường - đơn vị hàng đầu trong lĩnh vực thu mua phế liệu và vải tồn kho. Uy tín, chuyên nghiệp, thu mua tận nơi toàn quốc.">
+  <meta name="keywords" content="Công ty Hải Cường, thu mua phế liệu, thu mua vải, thu mua sắt, đồng, nhôm, inox, giá cao">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu Công ty TNHH Hải Cường - Thu mua phế liệu và vải tận nơi</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.7;
+      background-color: #f9f9f9;
+    }
+
+ header {
+  background-color: #0056a1;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 60px; /* to hơn */
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  display: inline-block;
+  padding: 25px 55px; /* logo dài hơn */
+  border-radius: 20px;
+  letter-spacing: 3px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ffffff66;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0056a1;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #0073e6;
+      margin-top: 25px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .highlight {
+      color: #0056a1;
+      font-weight: bold;
+    }
+
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+
+    .value-item {
+      flex: 1 1 250px;
+      padding: 15px;
+      border-left: 5px solid #0073e6;
+      background-color: #f0f8ff;
+      border-radius: 5px;
+    }
+
+    .process {
+      background-color: #eef7ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #0056a1;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+    }
+
+    a.btn {
+      display: inline-block;
+      background-color: #0073e6;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    a.btn:hover {
+      background-color: #0056a1;
+    }
+
+    @media (max-width: 768px) {
+      .values { flex-direction: column; }
+    }
+  </style>
+</head>
+<!-- Thanh menu -->
+<nav id="mainNav">
+    <a href="./index.html">Trang chủ</a>
+  <a href="./gioithieu.html">Giới thiệu</a>
+  <a href="./dichvu.html">Dịch vụ</a>
+  <a href="./banggia.html">Bảng giá</a>
+  <a href="./tintuc.html">Tin tức</a>
+  <a href="./lienhe.html">Liên hệ</a>
+</nav>
+
+<style>
+  /* ====== THANH MENU ====== */
+  #mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+ background-color: #248af7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.4s ease;
+    padding: 8px 0;          /* giảm chiều cao từ 15px xuống 8px */
+    height: 45px;            /* cố định chiều cao nhỏ gọn */
+  }
+
+  #mainNav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin: 0 15px;          /* khoảng cách đều, gọn hơn */
+    font-size: 15px;         /* chữ nhỏ lại một chút */
+    transition: color 0.3s;
+  }
+
+  #mainNav a:hover {
+    color: #004a8f;
+  }
+
+  /* Khi bị ẩn */
+  #mainNav.hidden {
+    top: -60px; /* đủ để đẩy thanh ra khỏi màn hình */
+  }
+</style>
+
+<script>
+  // ====== SCRIPT ẨN/HIỆN KHI CUỘN ======
+  let lastScrollTop = 0;
+  const nav = document.getElementById("mainNav");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Cuộn xuống → ẩn menu
+      nav.classList.add("hidden");
+    } else {
+      // Cuộn lên → hiện menu
+      nav.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+<body>
+    
+  <header>
+    <div class="logo">CH</div>
+    <h2>Công ty TNHH Hải Cường</h2>
+    <p>Chuyên thu mua phế liệu và vải tồn kho tận nơi – Uy tín, chuyên nghiệp, giá cao</p>
+  </header>
+
+  <div class="container">
+    <h3>Giới thiệu chung</h3>
+    <p>
+      <span class="highlight">Công ty TNHH Hải Cường</span> được thành lập với sứ mệnh trở thành đối tác tin cậy trong lĩnh vực 
+      <strong>thu mua phế liệu và vải tồn kho</strong> trên toàn quốc. Với đội ngũ nhân viên chuyên nghiệp và hệ thống phương tiện hiện đại, 
+      Hải Cường cam kết mang đến cho khách hàng dịch vụ nhanh chóng, minh bạch và giá tốt nhất thị trường.
+    </p>
+
+    <p>
+      Không chỉ là đơn vị thu mua, chúng tôi còn là cầu nối giúp các cơ sở sản xuất, doanh nghiệp và hộ gia đình 
+      xử lý phế liệu an toàn, tiết kiệm chi phí và góp phần bảo vệ môi trường.
+    </p>
+
+    <div class="values">
+      <div class="value-item">
+        <strong>Tầm nhìn:</strong>
+        <p>Trở thành công ty thu mua phế liệu hàng đầu Việt Nam, xây dựng chuỗi cung ứng bền vững và thân thiện môi trường.</p>
+      </div>
+      <div class="value-item">
+        <strong>Sứ mệnh:</strong>
+        <p>Mang lại giá trị thật cho khách hàng thông qua dịch vụ thu mua nhanh – gọn – chuyên nghiệp.</p>
+      </div>
+      <div class="value-item">
+        <strong>Giá trị cốt lõi:</strong>
+        <p>Uy tín – Trung thực – Hợp tác – Phát triển bền vững.</p>
+      </div>
+    </div>
+
+    <h3>Dịch vụ thu mua của Hải Cường</h3>
+    <p>
+      Chúng tôi chuyên thu mua đa dạng các loại phế liệu và vải, bao gồm:
+    </p>
+    <ul>
+      <li>Thu mua sắt, thép, inox, nhôm, đồng, chì, kẽm, nhựa, giấy, linh kiện điện tử, v.v.</li>
+      <li>Thu mua vải vụn, vải tồn kho, vải cây, vải khúc và phụ liệu may mặc.</li>
+      <li>Nhận thu gom tận nơi – thanh toán tiền mặt hoặc chuyển khoản nhanh chóng.</li>
+    </ul>
+
+    <div class="process">
+      <h3>Quy trình làm việc của chúng tôi</h3>
+      <p>Hải Cường luôn đề cao sự nhanh gọn, minh bạch và an toàn trong mọi giao dịch:</p>
+      <ul>
+        <li>📞 <strong>Tiếp nhận thông tin:</strong> Khách hàng liên hệ qua điện thoại hoặc Zalo để báo loại phế liệu/vải cần bán.</li>
+        <li>🚛 <strong>Khảo sát và báo giá:</strong> Nhân viên đến tận nơi xem hàng và báo giá trong vòng 15 phút.</li>
+        <li>💰 <strong>Thanh toán tại chỗ:</strong> Sau khi đồng ý giá, chúng tôi thu gom và thanh toán ngay – không bớt xén.</li>
+        <li>♻️ <strong>Dọn dẹp sạch sẽ:</strong> Sau khi thu mua, khu vực được dọn dẹp gọn gàng, trả lại hiện trạng ban đầu.</li>
+      </ul>
+    </div>
+
+    <h3>Khu vực hoạt động</h3>
+    <p>
+      Công ty TNHH Hải Cường hiện hoạt động mạnh tại TP.HCM, Bình Dương, Long An, Đồng Nai, Tây Ninh và mở rộng ra các tỉnh miền Tây, miền Trung.
+      Chúng tôi nhận thu mua số lượng lớn từ các nhà xưởng, công ty may mặc, cơ sở sản xuất, cũng như khách hàng cá nhân.
+    </p>
+
+    <h3>Cam kết của Hải Cường</h3>
+    <ul>
+      <li>Thu mua với giá cạnh tranh cao nhất thị trường.</li>
+      <li>Đo lường, phân loại trung thực, không ép giá.</li>
+      <li>Thanh toán nhanh – đủ – đúng hẹn.</li>
+      <li>Bảo mật thông tin khách hàng và hợp đồng.</li>
+    </ul>
+<!-- Floating Contact Buttons với 2 Facebook -->
+<style>
+  .contact-float {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+  .contact-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-float a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+
+  /* Nút màu riêng */
+  .facebook1 { background: #1877f2; } /* màu chuẩn FB */
+  .facebook2 { background: #3b5998; } /* màu FB khác, tối hơn */
+  .zalo { background: #0068ff; }
+  .phone { background: #25d366; }
+</style>
+
+<div class="contact-float">
+  <!-- Facebook 1 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook 1">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Facebook 2 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook2" title="Facebook 2">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Zalo -->
+  <a href="https://zalo.me/0933555567" target="_blank" class="zalo" title="Liên hệ Zalo">
+    Z
+  </a>
+
+  <!-- Số điện thoại -->
+  <a href="tel:0933555567" class="phone" title="Gọi ngay">
+    &#9742;
+  </a>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap5Ua1Wx1hPaxT0zQZc7M2lDkHwzEDW0jpeYb9ZUy/pOefkT2ZH9PRkGUK0e4/HTtQwJu4y6XgL+wJqjZ+klA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <p style="text-align:center; margin-top:20px;">
+      <a href="lien-he.html" class="btn">Liên hệ ngay</a>
+    </p>
+  </div>
+
+  <footer>
+    <p><strong>Công ty TNHH Hải Cường</strong> – Địa chỉ: 123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+    <p>Điện thoại: 0909.000.123 | Zalo: 0909.000.123 | Email: haicuongrecycle@gmail.com</p>
+    <p>&copy; 2025 Hải Cường Recycle. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liên Hệ Công Ty Hải Cường - Thu Mua Phế Liệu & Vải Tồn Kho</title>
+  <meta name="description" content="Liên hệ Công Ty Hải Cường để nhận báo giá phế liệu, tư vấn thu mua vải tồn kho, hỗ trợ nhanh chóng và uy tín. Điền form hoặc gọi hotline để kết nối ngay.">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0; padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #004a99;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    header .logo {
+      font-size: 70px;
+      font-weight: 800;
+      letter-spacing: 7px;
+      background: linear-gradient(135deg, #007bff, #004080);
+      padding: 25px 90px;
+      border-radius: 25px;
+      display: inline-block;
+      color: white;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+      user-select: none;
+      margin-bottom: 15px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #003366;
+      margin-bottom: 25px;
+      font-weight: 800;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 12px;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #00509e;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      color: #007bff;
+      margin-top: 35px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 18px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    input, textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    button {
+      padding: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .info-section {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .info-item {
+      background: #e6f0ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .info-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #00509e;
+    }
+    .faq {
+      margin-top: 50px;
+    }
+    .faq-item {
+      margin-bottom: 30px;
+    }
+    .testimonial {
+      border-left: 4px solid #007bff;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #333;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 5px;
+      color: #00509e;
+      font-style: normal;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+      color: #888;
+      background: #f0f2f5;
+      border-top: 1px solid #ccc;
+      margin-top: 60px;
+    }
+    #main {
+      font-size: 24px;
+      margin-top: 10px;
+      color: #d1d1d1;
+    }
+  </style>
+</head>
+<body>
+    <!-- Thanh menu -->
+<nav id="mainNav">
+   <a href="./index.html">Trang chủ</a>
+  <a href="./gioithieu.html">Giới thiệu</a>
+  <a href="./dichvu.html">Dịch vụ</a>
+  <a href="./banggia.html">Bảng giá</a>
+  <a href="./tintuc.html">Tin tức</a>
+  <a href="./lienhe.html">Liên hệ</a>
+</nav>
+
+<style>
+  /* ====== THANH MENU ====== */
+  #mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #248af7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.4s ease;
+    padding: 8px 0;          /* giảm chiều cao từ 15px xuống 8px */
+    height: 45px;            /* cố định chiều cao nhỏ gọn */
+  }
+
+  #mainNav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin: 0 15px;          /* khoảng cách đều, gọn hơn */
+    font-size: 15px;         /* chữ nhỏ lại một chút */
+    transition: color 0.3s;
+  }
+
+  #mainNav a:hover {
+    color: #004a8f;
+  }
+
+  /* Khi bị ẩn */
+  #mainNav.hidden {
+    top: -60px; /* đủ để đẩy thanh ra khỏi màn hình */
+  }
+</style>
+
+<script>
+  // ====== SCRIPT ẨN/HIỆN KHI CUỘN ======
+  let lastScrollTop = 0;
+  const nav = document.getElementById("mainNav");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Cuộn xuống → ẩn menu
+      nav.classList.add("hidden");
+    } else {
+      // Cuộn lên → hiện menu
+      nav.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+  <header>
+    <div class="logo">CH</div>
+    <p id="main">Liên hệ nhanh chóng với Công Ty Hải Cường - Thu mua phế liệu & vải tồn kho</p>
+  </header>
+
+  <main>
+    <h1>Liên Hệ Công Ty Hải Cường</h1>
+    <p>Chúng tôi sẵn sàng hỗ trợ bạn mọi thông tin về dịch vụ thu mua phế liệu, vải tồn kho và bảng giá cập nhật. Vui lòng điền đầy đủ thông tin vào form dưới đây hoặc liên hệ trực tiếp qua các kênh thông tin.</p>
+
+    <h2>Form Liên Hệ</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Họ và tên" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Số điện thoại" required>
+      <textarea name="message" placeholder="Nội dung liên hệ" required></textarea>
+      <button type="submit">Gửi Liên Hệ</button>
+    </form>
+
+    <div class="info-section">
+      <div class="info-item">
+        <strong>Địa chỉ:</strong> Số 123 Đường ABC, Quận 1, TP.HCM
+      </div>
+      <div class="info-item">
+        <strong>Hotline:</strong> 0933 555 567
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong> lienhe@haicuong.com.vn
+      </div>
+      <div class="info-item">
+        <strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7: 8:00 - 18:00
+      </div>
+    </div>
+
+    <h2>Bản Đồ Văn Phòng</h2>
+<p>Dưới đây là bản đồ tham khảo vị trí văn phòng Công Ty Hải Cường:</p>
+<div style="width: 100%; height: 450px; margin-top: 20px;">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.123456789!2d106.123456!3d10.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f123456789%3A0xabcdef1234567890!2sVị+trí+tham+khảo!5e0!3m2!1svi!2s!4v1690000000000!5m2!1svi!2s" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+    <h2>Câu Hỏi Thường Gặp (FAQ)</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Làm sao để nhận báo giá phế liệu nhanh nhất?</h3>
+        <p>Bạn có thể gọi hotline hoặc điền form liên hệ, chúng tôi sẽ phản hồi trong vòng 30 phút.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Công ty Hải Cường có nhận thu mua tận nơi không?</h3>
+        <p>Chắc chắn! Chúng tôi có dịch vụ thu mua tận nơi, cân đo và thanh toán ngay.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Làm thế nào để theo dõi bảng giá cập nhật?</h3>
+        <p>Khách hàng có thể truy cập trang Bảng Giá hoặc đăng ký nhận bản tin qua email.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Có dịch vụ tư vấn phân loại vải tồn kho không?</h3>
+        <p>Có, chúng tôi có đội ngũ chuyên viên tư vấn phân loại, giúp tối ưu giá trị khi thu mua.</p>
+      </div>
+    </div>
+
+    <h2>Đánh Giá Khách Hàng</h2>
+    <div class="testimonial">
+      "Dịch vụ liên hệ nhanh chóng, nhân viên tư vấn nhiệt tình và giải quyết mọi vấn đề của tôi một cách chuyên nghiệp."
+      <strong>- Anh Tuấn, TP.HCM</strong>
+    </div>
+    <div class="testimonial">
+      "Tôi nhận được báo giá ngay trong ngày và được hướng dẫn chi tiết cách vận chuyển vải tồn kho."
+      <strong>- Chị Lan, Bình Dương</strong>
+    </div>
+    <div class="testimonial">
+      "Hải Cường hỗ trợ tận nơi, làm việc rất nhanh và giá cả minh bạch."
+      <strong>- Anh Hưng, Đồng Nai</strong>
+    </div>
+    <!-- Phần đánh giá người dùng (đặt dưới about-section) -->
+<div class="review-section" style="margin-top: 50px;">
+  <h2>Đánh Giá Dịch Vụ Của Chúng Tôi</h2>
+  <p>Chúng tôi rất trân trọng phản hồi từ khách hàng. Hãy để lại đánh giá của bạn để giúp chúng tôi phục vụ tốt hơn:</p>
+  
+  <form action="#" method="post" style="margin-top: 20px;">
+    <input type="text" name="reviewer" placeholder="Họ và tên" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="review" placeholder="Viết đánh giá của bạn..." required></textarea>
+    <button type="submit">Gửi Đánh Giá</button>
+  </form>
+
+  <div class="testimonial" style="margin-top: 30px;">
+    <p>"Dịch vụ rất nhanh chóng và nhân viên tư vấn nhiệt tình!"</p>
+    <strong>- Anh Tuấn, TP.HCM</strong>
+  </div>
+  <div class="testimonial">
+    <p>"Báo giá minh bạch, hỗ trợ tận nơi, rất hài lòng."</p>
+    <strong>- Chị Lan, Bình Dương</strong>
+  </div>
+  <div class="testimonial">
+    <p>"Hải Cường là đối tác uy tín, làm việc chuyên nghiệp."</p>
+    <strong>- Anh Hưng, Đồng Nai</strong>
+  </div>
+</div>
+<!-- Floating Contact Buttons với 2 Facebook -->
+<style>
+  .contact-float {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+  .contact-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-float a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+
+  /* Nút màu riêng */
+  .facebook1 { background: #1877f2; } /* màu chuẩn FB */
+  .facebook2 { background: #3b5998; } /* màu FB khác, tối hơn */
+  .zalo { background: #0068ff; }
+  .phone { background: #25d366; }
+</style>
+
+<div class="contact-float">
+  <!-- Facebook 1 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook 1">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Facebook 2 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook2" title="Facebook 2">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Zalo -->
+  <a href="https://zalo.me/0933555567" target="_blank" class="zalo" title="Liên hệ Zalo">
+    Z
+  </a>
+
+  <!-- Số điện thoại -->
+  <a href="tel:0933555567" class="phone" title="Gọi ngay">
+    &#9742;
+  </a>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap5Ua1Wx1hPaxT0zQZc7M2lDkHwzEDW0jpeYb9ZUy/pOefkT2ZH9PRkGUK0e4/HTtQwJu4y6XgL+wJqjZ+klA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <h2>Lời Kết</h2>
+    <p>Chúng tôi luôn lắng nghe và hỗ trợ khách hàng nhanh chóng. Mọi thông tin, tư vấn, báo giá đều miễn phí và minh bạch. Hãy liên hệ ngay hôm nay để nhận hỗ trợ tốt nhất từ Công Ty Hải Cường.</p>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Công Ty Hải Cường - Liên hệ & dịch vụ phế liệu uy tín
+  </footer>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tin Tức & Cập Nhật Phế Liệu - Công Ty Hải Cường</title>
+  <meta name="description" content="Tin tức mới nhất về thị trường phế liệu, vải tồn kho, mẹo thu mua và đánh giá khách hàng từ Công Ty Hải Cường. Cập nhật bảng giá và xu hướng thị trường." />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0; padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #004a99;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    header .logo {
+      font-size: 70px;
+      font-weight: 800;
+      letter-spacing: 7px;
+      background: linear-gradient(135deg, #007bff, #004080);
+      padding: 25px 90px;
+      border-radius: 25px;
+      display: inline-block;
+      color: white;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+      user-select: none;
+      margin-bottom: 10px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto 60px;
+      background: white;
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 3rem;
+      color: #003366;
+      margin-bottom: 20px;
+      font-weight: 800;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #00509e;
+      margin-top: 50px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 1.5rem;
+      color: #007bff;
+      margin-top: 35px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 18px;
+    }
+    article {
+      margin-bottom: 50px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 30px;
+    }
+    article img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .testimonials {
+      background: #e6f0ff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 50px;
+    }
+    .testimonial {
+      border-left: 4px solid #007bff;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #333;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 5px;
+      color: #00509e;
+      font-style: normal;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+      color: #888;
+      background: #f0f2f5;
+      border-top: 1px solid #ccc;
+      margin-top: 60px;
+    }
+    #scale {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #d1d1d1;
+    }
+  </style>
+</head>
+<body>
+    <!-- Thanh menu -->
+<nav id="mainNav">
+  <a href="./index.html">Trang chủ</a>
+  <a href="./gioithieu.html">Giới thiệu</a>
+  <a href="./dichvu.html">Dịch vụ</a>
+  <a href="./banggia.html">Bảng giá</a>
+  <a href="./tintuc.html">Tin tức</a>
+  <a href="./lienhe.html">Liên hệ</a>
+</nav>
+
+<style>
+  /* ====== THANH MENU ====== */
+  #mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #248af7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.4s ease;
+    padding: 8px 0;          /* giảm chiều cao từ 15px xuống 8px */
+    height: 45px;            /* cố định chiều cao nhỏ gọn */
+  }
+
+  #mainNav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin: 0 15px;          /* khoảng cách đều, gọn hơn */
+    font-size: 15px;         /* chữ nhỏ lại một chút */
+    transition: color 0.3s;
+  }
+
+  #mainNav a:hover {
+    color: #004a8f;
+  }
+
+  /* Khi bị ẩn */
+  #mainNav.hidden {
+    top: -60px; /* đủ để đẩy thanh ra khỏi màn hình */
+  }
+</style>
+
+<script>
+  // ====== SCRIPT ẨN/HIỆN KHI CUỘN ======
+  let lastScrollTop = 0;
+  const nav = document.getElementById("mainNav");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Cuộn xuống → ẩn menu
+      nav.classList.add("hidden");
+    } else {
+      // Cuộn lên → hiện menu
+      nav.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+  <header>
+    <div class="logo">CH</div>
+    <p id="scale">Tin tức, bảng giá và đánh giá dịch vụ phế liệu & vải tồn kho</p>
+  </header>
+
+  <main>
+    <h1>Tin Tức & Cập Nhật Mới Nhất - Công Ty Hải Cường</h1>
+
+    <article>
+      <h2>Giá Phế Liệu Sắt Tăng Mạnh Trong Quý 4/2025</h2>
+     
+      <p>Giá phế liệu sắt đang ở mức cao kỷ lục. Nguyên nhân chủ yếu là do nhu cầu thép xây dựng tăng mạnh. Công ty Hải Cường cập nhật bảng giá thường xuyên để khách hàng nắm thông tin nhanh nhất.</p>
+      <p>Chúng tôi khuyến nghị khách hàng liên hệ trực tiếp để nhận báo giá cụ thể và dịch vụ vận chuyển tận nơi, đảm bảo lợi ích tối đa.</p>
+    </article>
+
+    <article>
+      <h2>Phân Loại Vải Tồn Kho Để Thu Mua Hiệu Quả</h2>
+     
+      <p>Việc phân loại vải tồn kho là bước quan trọng giúp tối ưu giá thu mua và xử lý nhanh. Chúng tôi phân loại theo chất liệu, màu sắc, tình trạng và số lượng, mang lại giá trị cao nhất cho khách hàng.</p>
+      <p>Công ty Hải Cường có đội ngũ chuyên viên hỗ trợ tư vấn phân loại, đảm bảo bạn bán vải tồn kho với giá tốt nhất.</p>
+    </article>
+
+    <article>
+      <h2>Cập Nhật Giá Đồng & Nhôm Tháng 11/2025</h2>
+       
+      <p>Giá đồng và nhôm đang biến động mạnh. Hải Cường đảm bảo cung cấp giá thu mua cạnh tranh và thanh toán nhanh, giúp khách hàng an tâm khi bán số lượng lớn.</p>
+      <p>Bảng giá luôn được cập nhật hàng tuần, khách hàng có thể kiểm tra trực tuyến hoặc gọi hotline để nhận báo giá chi tiết.</p>
+    </article>
+
+    <article>
+      <h2>Xu Hướng Thu Mua Phế Liệu Năm 2026</h2>
+     
+      <p>Năm 2026, thị trường phế liệu dự kiến tăng trưởng mạnh, đặc biệt là phế liệu kim loại và vải tồn kho. Hải Cường sẽ tiếp tục cung cấp dịch vụ tận nơi và bảng giá minh bạch cho khách hàng.</p>
+      <p>Chúng tôi khuyến nghị khách hàng theo dõi tin tức liên tục để nắm bắt cơ hội thị trường.</p>
+    </article>
+
+    <article>
+      <h2>Mẹo Thu Mua Phế Liệu Nhôm Hiệu Quả</h2>
+       
+      <p>Nhôm là loại phế liệu có giá trị cao, nhưng việc thu mua cần lưu ý tới độ tinh khiết và dạng vật liệu. Hải Cường tư vấn đầy đủ để khách hàng nhận giá tốt nhất.</p>
+      <p>Đội ngũ nhân viên chuyên nghiệp sẽ hỗ trợ bạn phân loại, cân đo và thanh toán ngay tại chỗ.</p>
+    </article>
+
+    <article>
+      <h2>Hướng Dẫn Lưu Trữ Vải Tồn Kho Tránh Mốc</h2>
+       <p>Vải tồn kho cần được lưu trữ nơi khô ráo, thoáng khí và tránh ánh nắng trực tiếp. Hải Cường hướng dẫn khách hàng các phương pháp bảo quản đúng cách để giữ giá trị vải tồn kho lâu dài.</p>
+      <p>Các mẹo bảo quản này giúp vải không bị ẩm, mốc và mất giá trị khi thu mua lại.</p>
+    </article>
+
+    <!-- Phần Đánh Giá Khách Hàng -->
+    <section class="testimonials">
+      <h2>Khách Hàng Nói Gì Về Hải Cường</h2>
+
+      <div class="testimonial">
+        "Dịch vụ thu mua phế liệu của Hải Cường rất chuyên nghiệp, nhân viên tư vấn tận tình và giá cả cạnh tranh." 
+        <strong>- Anh Tuấn, TP.HCM</strong>
+      </div>
+
+      <div class="testimonial">
+        "Bán vải tồn kho cho Hải Cường nhanh chóng, tiện lợi và thanh toán ngay, tôi rất hài lòng!" 
+        <strong>- Chị Lan, Bình Dương</strong>
+      </div>
+
+      <div class="testimonial">
+        "Hải Cường luôn cập nhật bảng giá nhanh, giúp tôi nắm bắt thị trường phế liệu hiệu quả." 
+        <strong>- Anh Hưng, Đồng Nai</strong>
+      </div>
+    </section>
+
+    <h2>Liên Hệ & Tư Vấn</h2>
+    <p>Để nhận tin tức mới nhất và tư vấn dịch vụ thu mua phế liệu, vui lòng liên hệ:</p>
+    <ul>
+      <li><strong>Hotline:</strong> 0984499986</li>
+      <li><strong>Email:</strong> lienhe@haicuong.com.vn</li>
+      <li><strong>Địa chỉ:</strong> Phường Nam Sầm Sơn</li>
+    </ul>
+<!-- Floating Contact Buttons với 2 Facebook -->
+<style>
+  .contact-float {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+  .contact-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-float a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+
+  /* Nút màu riêng */
+  .facebook1 { background: #1877f2; } /* màu chuẩn FB */
+  .facebook2 { background: #3b5998; } /* màu FB khác, tối hơn */
+  .zalo { background: #0068ff; }
+  .phone { background: #25d366; }
+</style>
+
+<div class="contact-float">
+  <!-- Facebook 1 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook 1">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Facebook 2 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook2" title="Facebook 2">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Zalo -->
+  <a href="https://zalo.me/0933555567" target="_blank" class="zalo" title="Liên hệ Zalo">
+    Z
+  </a>
+
+  <!-- Số điện thoại -->
+  <a href="tel:0933555567" class="phone" title="Gọi ngay">
+    &#9742;
+  </a>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap5Ua1Wx1hPaxT0zQZc7M2lDkHwzEDW0jpeYb9ZUy/pOefkT2ZH9PRkGUK0e4/HTtQwJu4y6XgL+wJqjZ+klA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </main>
+
+  <footer>
+    &copy; 2025 Công Ty Hải Cường - Tin tức & dịch vụ phế liệu uy tín
+  </footer>
+</body>
+</html>

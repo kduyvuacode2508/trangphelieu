@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Dịch vụ thu mua phế liệu và vải tại Công ty TNHH Hải Cường. Chuyên thu mua sắt, đồng, nhôm, inox, vải vụn tận nơi, giá cao, thanh toán nhanh.">
+  <meta name="keywords" content="dịch vụ thu mua phế liệu, thu mua vải, Hải Cường, thu mua tận nơi, phế liệu giá cao, công ty thu mua">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch vụ thu mua phế liệu & vải - Công ty TNHH Hải Cường</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.7;
+      background-color: #f9f9f9;
+    }
+
+    header {
+  background-color: #0056a1;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 60px; /* to hơn */
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  display: inline-block;
+  padding: 25px 55px; /* logo dài hơn */
+  border-radius: 20px;
+  letter-spacing: 3px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ffffff66;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+header p {
+  margin-top: 10px;
+  font-size: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+
+    h2 {
+      color: #004d99;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #0073e6;
+      margin-top: 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 25px 0;
+      gap: 20px;
+    }
+
+    .service-item {
+      flex: 1 1 300px;
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-left: 5px solid #0073e6;
+      border-radius: 8px;
+    }
+
+    .process {
+      background-color: #eef7ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    ul { padding-left: 20px; }
+
+    .cta {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    a.btn {
+      display: inline-block;
+      background-color: #0073e6;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    a.btn:hover {
+      background-color: #0056a1;
+    }
+
+    footer {
+      background-color: #004d99;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+    
+    }
+ 
+
+    @media (max-width: 768px) {
+      .service-list { flex-direction: column; }
+    }
+  </style>
+</head>
+<!-- Thanh menu -->
+<nav id="mainNav">
+  <a href="./index.html">Trang chủ</a>
+  <a href="./gioithieu.html">Giới thiệu</a>
+  <a href="./dichvu.html">Dịch vụ</a>
+  <a href="./banggia.html">Bảng giá</a>
+  <a href="./tintuc.html">Tin tức</a>
+  <a href="./lienhe.html">Liên hệ</a>
+</nav>
+
+<style>
+  /* ====== THANH MENU ====== */
+  #mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #248af7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.4s ease;
+    padding: 8px 0;          /* giảm chiều cao từ 15px xuống 8px */
+    height: 45px;            /* cố định chiều cao nhỏ gọn */
+  }
+
+  #mainNav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    margin: 0 15px;          /* khoảng cách đều, gọn hơn */
+    font-size: 15px;         /* chữ nhỏ lại một chút */
+    transition: color 0.3s;
+  }
+
+  #mainNav a:hover {
+    color: #004a8f;
+  }
+
+  /* Khi bị ẩn */
+  #mainNav.hidden {
+    top: -60px; /* đủ để đẩy thanh ra khỏi màn hình */
+  }
+</style>
+
+<script>
+  // ====== SCRIPT ẨN/HIỆN KHI CUỘN ======
+  let lastScrollTop = 0;
+  const nav = document.getElementById("mainNav");
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Cuộn xuống → ẩn menu
+      nav.classList.add("hidden");
+    } else {
+      // Cuộn lên → hiện menu
+      nav.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+<body>
+  <header>
+    <div class="logo">CH</div>
+  
+    <p>Giải pháp thu mua phế liệu & vải – nhanh chóng, minh bạch, giá cao nhất thị trường</p>
+  </header>
+
+  <div class="container">
+    <h3>Giới thiệu dịch vụ</h3>
+    <p>
+      <strong>Công ty TNHH Hải Cường</strong> cung cấp các dịch vụ thu mua phế liệu và vải chuyên nghiệp cho doanh nghiệp và cá nhân trên toàn quốc.  
+      Chúng tôi hiểu rằng phế liệu không chỉ là phần bỏ đi mà còn là nguồn tài nguyên có thể tái chế, giúp bảo vệ môi trường và mang lại giá trị kinh tế.
+    </p>
+
+    <div class="service-list">
+      <div class="service-item">
+        <strong>Thu mua phế liệu kim loại</strong>
+        <p>Chuyên thu mua sắt, thép, inox, đồng, nhôm, kẽm, chì, hợp kim, dây điện và máy móc hư hỏng. Báo giá theo giá thị trường, cân đo trung thực.</p>
+      </div>
+      <div class="service-item">
+        <strong>Thu mua phế liệu nhựa & giấy</strong>
+        <p>Nhận thu gom nhựa tái chế, nhựa công nghiệp, giấy vụn, bìa carton, giấy in lỗi… xử lý nhanh gọn, không để tồn đọng.</p>
+      </div>
+      <div class="service-item">
+        <strong>Thu mua vải vụn, vải tồn kho</strong>
+        <p>Thu mua tận nơi vải cây, vải khúc, vải cuộn, vải thun, vải jean, vải dù và phụ liệu may mặc với giá tốt nhất.</p>
+      </div>
+      <div class="service-item">
+        <strong>Thanh lý kho xưởng</strong>
+        <p>Nhận thu mua trọn gói kho phế liệu, hàng tồn, thiết bị hư hỏng – dọn sạch mặt bằng và thanh toán liền tay.</p>
+      </div>
+    </div>
+
+    <h3>Quy trình làm việc</h3>
+    <div class="process">
+      <ul>
+        <li><strong>Bước 1:</strong> Khách hàng liên hệ với Hải Cường qua số điện thoại hoặc Zalo.</li>
+        <li><strong>Bước 2:</strong> Nhân viên đến khảo sát tận nơi, báo giá trong 15 phút.</li>
+        <li><strong>Bước 3:</strong> Hai bên thống nhất giá, tiến hành thu gom và thanh toán ngay.</li>
+        <li><strong>Bước 4:</strong> Dọn dẹp sạch sẽ, bàn giao mặt bằng cho khách hàng.</li>
+      </ul>
+    </div>
+
+    <h3>Lý do nên chọn dịch vụ của Hải Cường</h3>
+    <ul>
+      <li>Thu mua tận nơi, nhanh chóng – không mất thời gian chờ đợi.</li>
+      <li>Giá luôn cao hơn thị trường, thanh toán tại chỗ.</li>
+      <li>Nhân viên chuyên nghiệp, thái độ thân thiện.</li>
+      <li>Có hợp đồng rõ ràng cho doanh nghiệp và cá nhân.</li>
+      <li>Hỗ trợ dọn dẹp, bốc xếp và vận chuyển miễn phí.</li>
+    </ul>
+
+    <div class="cta">
+      <a href="lien-he.html" class="btn">Liên hệ để được báo giá</a>
+    </div>
+  </div>
+<!-- Floating Contact Buttons với 2 Facebook -->
+<style>
+  .contact-float {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+  .contact-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-float a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+
+  /* Nút màu riêng */
+  .facebook1 { background: #1877f2; } /* màu chuẩn FB */
+  .facebook2 { background: #3b5998; } /* màu FB khác, tối hơn */
+  .zalo { background: #0068ff; }
+  .phone { background: #25d366; }
+</style>
+
+<div class="contact-float">
+  <!-- Facebook 1 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook 1">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Facebook 2 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook2" title="Facebook 2">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Zalo -->
+  <a href="https://zalo.me/0933555567" target="_blank" class="zalo" title="Liên hệ Zalo">
+    Z
+  </a>
+
+  <!-- Số điện thoại -->
+  <a href="tel:0933555567" class="phone" title="Gọi ngay">
+    &#9742;
+  </a>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap5Ua1Wx1hPaxT0zQZc7M2lDkHwzEDW0jpeYb9ZUy/pOefkT2ZH9PRkGUK0e4/HTtQwJu4y6XgL+wJqjZ+klA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <footer>
+    <p><strong>Công ty TNHH Hải Cường</strong> – Thu mua phế liệu và vải tận nơi toàn quốc</p>
+    <p>Hotline: 0909.000.123 | Zalo: 0909.000.123 | Email: haicuongrecycle@gmail.com</p>
+    <p>&copy; 2025 Hải Cường Recycle. All rights reserved.</p>
+  </footer>
+</body>
+</html>
