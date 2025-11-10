@@ -12,29 +12,147 @@
       font-family: Arial, sans-serif;
       background: #f5f7fa;
       margin: 0; padding: 0;
-      color: #333;
+      
       line-height: 1.6;
     }
-    header {
+   .banner-logo {
       background-color: #004a99;
       color: white;
-      padding: 35px 20px;
+      padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     }
-    header .logo {
-      font-size: 60px;
-      font-weight: 700;
-      letter-spacing: 6px;
+   .banner-logo .logo {
+      font-size: 70px;
+      font-weight: 800;
+      letter-spacing: 7px;
       background: linear-gradient(135deg, #007bff, #004080);
-      padding: 20px 80px;
+      padding: 25px 90px;
       border-radius: 25px;
       display: inline-block;
       color: white;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.35);
       user-select: none;
       margin-bottom: 10px;
     }
+    header {
+      background: linear-gradient(135deg, #004c8c 0%, #006bb3 100%);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    header .logo-circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    header .logo-circle span {
+      font-size: 32px;
+      color: #004c8c;
+      font-weight: 800;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header .company-info {
+      font-size: 13px;
+      opacity: 0.95;
+      margin-top: 3px;
+    }
+
+    header .contact-info a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    header .contact-info a:hover {
+      color: #ffd700;
+    }
+
+    nav {
+      background: #fff;
+      border-bottom: 3px solid #004c8c;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      padding: 16px 28px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #008000;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover {
+      background: #004c8c;
+      color: #fff;
+    }
+
+    nav a:hover::after {
+      width: 80%;
+    }
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        padding: 12px 18px;
+        font-size: 14px;
+      }
+    }
+
     main {
       max-width: 900px;
       margin: 40px auto 60px;
@@ -43,7 +161,7 @@
       border-radius: 15px;
       box-shadow: 0 5px 18px rgba(0,0,0,0.1);
     }
-    h1 {
+    main h1 {
       font-size: 2.8rem;
       color: #003366;
       margin-bottom: 15px;
@@ -67,7 +185,7 @@
       margin-bottom: 8px;
       font-weight: 600;
     }
-    p {
+    main p {
       font-size: 1rem;
       color: #444;
       margin-bottom: 18px;
@@ -141,52 +259,33 @@
 </head>
 <body>
 
-<!-- Thanh menu -->
-<nav id="mainNav">
-  <a href="./index.html">Trang chủ</a>
-  <a href="./gioithieu.html">Giới thiệu</a>
-  <a href="./dichvu.html">Dịch vụ</a>
-  <a href="./banggia.html">Bảng giá</a>
-  <a href="./tintuc.html">Tin tức</a>
-  <a href="./lienhe.html">Liên hệ</a>
-</nav>
+  <header>
+    <div class="logo-section">
+      <div class="logo-circle">
+        <span>CH</span>
+      </div>
+      <div>
+        <h1>CÔNG TY TNHH CƯỜNG HẢI</h1>
+        <div class="company-info">Phường Nam, Sầm Sơn - Uy tín, chuyên nghiệp</div>
+      </div>
+    </div>
+    <div class="contact-info">
+      <div>Hotline: <a href="tel:0984499986">0984.499.986</a></div>
+      <div><a href="tel:0968535989">0968.535.989</a></div>
+    </div>
+  </header>
+  
+  <nav>
+    <a href="./index.html">Trang chủ</a>
+    <a href="./gioithieu.html">Giới thiệu</a>
+    <a href="./dichvu.html">Dịch vụ</a>
+    <a href="./banggia.html">Bảng giá</a>
+    <a href="./tintuc.html">Tin tức</a>
+    <a href="./lienhe.html">Liên hệ</a>
+  </nav>
+  
 
-<style>
-  /* ====== THANH MENU ====== */
-  #mainNav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #248af7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: top 0.4s ease;
-    padding: 8px 0;          /* giảm chiều cao từ 15px xuống 8px */
-    height: 45px;            /* cố định chiều cao nhỏ gọn */
-  }
 
-  #mainNav a {
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    margin: 0 15px;          /* khoảng cách đều, gọn hơn */
-    font-size: 15px;         /* chữ nhỏ lại một chút */
-    transition: color 0.3s;
-  }
-
-  #mainNav a:hover {
-    color: #004a8f;
-  }
-
-  /* Khi bị ẩn */
-  #mainNav.hidden {
-    top: -60px; /* đủ để đẩy thanh ra khỏi màn hình */
-  }
-</style>
 
 <script>
   // ====== SCRIPT ẨN/HIỆN KHI CUỘN ======
@@ -208,10 +307,10 @@
 </script>
 
     
-  <header>
+  <div class="banner-logo">
     <div class="logo">CH</div>
-    <p id="padding">Chuyên thu mua phế liệu và vải tồn kho tận nơi – Uy tín, giá tốt, dịch vụ chuyên nghiệp</p>
-  </header>
+    <p class="scale">Chuyên thu mua phế liệu và vải tồn kho tận nơi – Uy tín, giá tốt, dịch vụ chuyên nghiệp</p>
+  </div>
 
   <main>
     <h1>Bảng Giá Thu Mua Phế Liệu & Vải Tồn Kho Tại CƯỜNG HẢI</h1>
