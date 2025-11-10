@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <title>CÔNG TY TNHH CƯỜNG HẢI  - Thu mua vải tồn kho giá cao tại Sầm Sơn</title>
   <meta name="description" content="Công Ty TNHH Cường Hải chuyên thu mua vải tồn kho, vải cây, vải khúc giá cao tại Phường Nam, Sầm Sơn. Thanh toán nhanh, uy tín, chuyên nghiệp.">
   <meta name="keywords" content="Cường Hải, thu mua vải tồn kho, thu mua phế liệu, Sầm Sơn, vải cây giá cao">
@@ -234,7 +235,63 @@
     </div>
   </div>
 </section>
+<style>
+  .contact-float {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+  .contact-float a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .contact-float a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
 
+  /* Nút màu riêng */
+  .facebook1 { background: #1877f2; } /* màu chuẩn FB */
+  .facebook2 { background: #3b5998; } /* màu FB khác, tối hơn */
+  .zalo { background: #0068ff; }
+  .phone { background: #25d366; }
+</style>
+
+
+<div class="contact-float">
+  <!-- Facebook 1 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook 1">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <!-- Facebook 2 -->
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook2" title="Facebook 2">
+    <i class="fa-regular fa-comment-dots"></i>
+  </a>
+
+  <!-- Zalo -->
+  <a href="https://zalo.me/0984499986" target="_blank" class="zalo" title="Liên hệ Zalo" style="font-size: 20px;">
+    Zalo
+  </a>
+
+  <!-- Số điện thoại -->
+  <a href="tel:0984499986" class="phone" title="Gọi ngay">
+    &#9742;
+  </a>
+</div>
 <div class="contact" id="contact">
   <h2>LIÊN HỆ VỚI CƯỜNG HẢI NGAY HÔM NAY</h2>
   <p>Chúng tôi sẵn sàng báo giá và thu mua tận nơi, phục vụ nhanh – uy tín – chuyên nghiệp!</p>
