@@ -7,6 +7,7 @@
   <meta name="keywords" content="thu mua phế liệu, thu mua sắt, thu mua đồng, thu mua nhôm, thu mua inox, thu mua nhựa, phế liệu công trình, Công ty Cường Hải, giá phế liệu hôm nay">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Công ty TNHH CƯỜNG HẢI - Chuyên Thu Mua Phế Liệu Giá Cao Toàn Quốc</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 
   <style>
@@ -155,6 +156,27 @@
       margin-top: 10px;
     }
     a.btn:hover { background-color: #0056a1; }
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        padding: 12px 18px;
+        font-size: 14px;
+      }
+    }
+
   </style>
 </head>
 
@@ -168,8 +190,8 @@
       </div>
     </div>
     <div class="contact-info">
-      <div>Hotline: <a href="tel:0984499986">0984.499.986</a></div>
-      <div><a href="tel:0968535989">0968.535.989</a></div>
+      <div>Hotline: <a href="tel:0933585567">0933585567</a></div>
+      <div><a href="tel:0989499939">0989499939</a></div>
     </div>
   </header>
 
@@ -181,6 +203,19 @@
     <a href="./tintuc.html">Tin tức</a>
     <a href="./lienhe.html">Liên hệ</a>
   </nav>
+  <div class="banner-slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="./img/banner.jpg" alt="Banner 1">
+      </div>
+      <div class="slide">
+        <img src="./img/banner.jpg" alt="Banner 2">
+      </div>
+      <div class="slide">
+        <img src="./img/banner.jpg" alt="Banner 3">
+      </div>
+    </div>
+  </div>
 
   <div class="banner-logo">
     <div class="logo">CH</div>
@@ -258,8 +293,9 @@
 
   <footer>
     <p><strong>Công ty TNHH CƯỜNG HẢI</strong> – Phường Nam, Sầm Sơn</p>
-    <p>Hotline: 0984.499.986 – 0968.535.989</p>
+    <p>Hotline: 0933585567.0989499939</p>
     <p>&copy; 2025 CƯỜNG HẢI Recycle. All rights reserved.</p>
   </footer>
+  <script src="main.js"></script>
 </body>
 </html>

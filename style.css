@@ -1,0 +1,32 @@
+/* ====== SLIDER ====== */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1900 / 550; /* Giữ đúng tỉ lệ ảnh bạn gửi */
+  }
+  
+  .banner-slider .slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .banner-slider .slide {
+    min-width: 100%;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .banner-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Responsive cho điện thoại */
+  @media (max-width: 768px) {
+    .banner-slider {
+      aspect-ratio: 16 / 9; /* Cho điện thoại giữ tỉ lệ tốt hơn */
+    }
+  }
+  
