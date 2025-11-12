@@ -13,3 +13,15 @@
 
   setInterval(showNextSlide, 4000); // đổi slide sau mỗi 4 giây
 
+  
+  window.addEventListener('scroll', function() {
+    const callTop = document.getElementById('callTop');
+    if (window.scrollY > 300) { // hiện khi cuộn xuống hơn 300px
+      callTop.classList.add('show');
+    } else {
+      callTop.classList.remove('show');
+    }
+  });
+
+
+
