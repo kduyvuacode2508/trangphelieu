@@ -1,173 +1,692 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="./img/CH.png">
-  <title>Tìm Kiếm Dịch Vụ Thu Mua - Công Ty TNHH Cường Hải</title>
-  <meta name="description" content="Tìm kiếm dịch vụ thu mua phế liệu: đồng, sắt, nhôm, inox, dây cáp điện và nhiều loại khác tại Cường Hải">
-  <link rel="stylesheet" href="./style.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thu Mua Phế Liệu Cường Hải - Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
     
-  </style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           
+        }
+
+        .container a{
+           
+        }
+
+       
+
+       
+
+        .company-info {
+            color:whitesmoke;
+            font-size: 1.1em;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .company-info strong {
+           
+            display: block;
+            margin-top: 10px;
+        }
+
+       
+        #resultsHeader {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        #noResults {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+      
+
+        .gallery-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .gallery-section h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .video-overlay::after {
+            content: '▶';
+            font-size: 24px;
+            color: #667eea;
+            margin-left: 5px;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img,
+        .lightbox-content video {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            user-select: none;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+          
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .gallery-item img,
+            .gallery-item video {
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="logo-section">
+          <div class="logo-circle">
+            <span>CH</span>
+          </div>
+          <div>
+            <h1>CÔNG TY TNHH CƯỜNG HẢI</h1>
+            <div class="company-info">Phường Nam Sầm Sơn - Uy tín, chuyên nghiệp</div>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div>Hotline: <a href="tel:0933585567">0933585567</a></div>
+        
+        </div>
+      </header>
+      
+      <nav>
+        <a href="./index.html">Trang chủ</a>
+        <a href="./gioithieu.html">Giới thiệu</a>
+        <a href="./dichvu.html">Thu Mua Phế Liệu</a>
+        <a href="./banggia.html">Bảng giá</a>
+        <a href="./tintuc.html">Tin tức</a>
+        <a href="./lienhe.html">Liên hệ</a>
+        <a href="timkiem.html" class="header-seach"> <i class="fas fa-search"></i>Tìm Kiếm</a>
+      </nav>
+    <div class="container">
+        
 
-<header>
-  <div class="logo-section">
-    <div class="logo-circle">
-      <span>CH</span>
-    </div>
-    <div>
-      <h1>CÔNG TY TNHH CƯỜNG HẢI</h1>
-      <div class="company-info">Phường Nam Sầm Sơn - Uy tín, chuyên nghiệp</div>
-    </div>
-  </div>
-  <div class="contact-info">
-    <div>Hotline: <a href="tel:0933585567">0933585567</a></div>
-  
-  </div>
-</header>
+        <section class="search-section">
+            <h1>TÌM KIẾM DỊCH VỤ THU MUA</h1>
+            <div class="search-box">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Nhập từ khóa tìm kiếm (VD: đồng, sắt, nhôm, inox...)"
+                autocomplete="off"
+              >
+              <button onclick="performSearch()"><i class="fas fa-search"></i> Tìm kiếm</button>
+            </div>
+          
+            <div class="popular-keywords">
+              <h4>Từ khóa phổ biến:</h4>
+              <div class="keyword-tags">
+                <span class="keyword-tag" onclick="searchByKeyword('đồng')">Đồng</span>
+                <span class="keyword-tag" onclick="searchByKeyword('sắt')">Sắt</span>
+                <span class="keyword-tag" onclick="searchByKeyword('nhôm')">Nhôm</span>
+                <span class="keyword-tag" onclick="searchByKeyword('inox')">Inox</span>
+                <span class="keyword-tag" onclick="searchByKeyword('dây cáp')">Dây cáp điện</span>
+                <span class="keyword-tag" onclick="searchByKeyword('máy móc')">Máy móc</span>
+              </div>
+            </div>
+          </section>
+          
 
-<nav>
-  <a href="./index.html">Trang chủ</a>
-  <a href="./gioithieu.html">Giới thiệu</a>
-  <a href="./dichvu.html">Thu Mua Phế Liệu</a>
-  <a href="./banggia.html">Bảng giá</a>
-  <a href="./tintuc.html">Tin tức</a>
-  <a href="./lienhe.html">Liên hệ</a>
-  <a href="timkiem.html" class="header-seach"> <i class="fas fa-search"></i>Tìm Kiếm</a>
-</nav>
-<!-- Nút gọi nổi bên phải trên (hiện khi cuộn xuống) -->
-<a href="tel:0989499939" class="call-top" id="callTop">
-  <i class="fas fa-phone"></i> 0933585567
-</a>
+        <div id="resultsHeader">
+            <h2 id="resultsCount"></h2>
+        </div>
 
-<section class="search-section">
-  <h1>TÌM KIẾM DỊCH VỤ THU MUA</h1>
-  <div class="search-box">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Nhập từ khóa tìm kiếm (VD: đồng, sắt, nhôm, inox...)"
-      autocomplete="off"
-    >
-    <button onclick="performSearch()"><i class="fas fa-search"></i> Tìm kiếm</button>
-  </div>
+        <div id="noResults">
+            <h2>Không tìm thấy kết quả</h2>
+            <p>Vui lòng thử lại với từ khóa khác hoặc liên hệ hotline để được tư vấn</p>
+        </div>
 
-  <div class="popular-keywords">
-    <h4>Từ khóa phổ biến:</h4>
-    <div class="keyword-tags">
-      <span class="keyword-tag" onclick="searchByKeyword('đồng')">Đồng</span>
-      <span class="keyword-tag" onclick="searchByKeyword('sắt')">Sắt</span>
-      <span class="keyword-tag" onclick="searchByKeyword('nhôm')">Nhôm</span>
-      <span class="keyword-tag" onclick="searchByKeyword('inox')">Inox</span>
-      <span class="keyword-tag" onclick="searchByKeyword('dây cáp')">Dây cáp điện</span>
-      <span class="keyword-tag" onclick="searchByKeyword('máy móc')">Máy móc</span>
-    </div>
-  </div>
-</section>
+        <div class="products-grid" id="productsGrid"></div>
 
-<section class="results-section">
-  <div class="results-header" id="resultsHeader" style="display:none;">
-    <h2>Kết quả tìm kiếm</h2>
-    <p class="results-count" id="resultsCount"></p>
-  </div>
+        <div class="gallery-section">
+            <h2>Hình Ảnh Thực Tế Thu Mua Phế Liệu</h2>
+            <div class="gallery-grid" id="imageGallery"></div>
+        </div>
 
-  <div class="products-grid" id="productsGrid"></div>
-
-  <div class="no-results" id="noResults" style="display:none;">
-    <i class="fas fa-search"></i>
-    <h3>Không tìm thấy kết quả</h3>
-    <p>Vui lòng thử lại với từ khóa khác</p>
-  </div>
-</section>
-
-<div class="contact-float">
-  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://m.me/haicuong" target="_blank" class="facebook2" title="Messenger">
-    <i class="fab fa-facebook-messenger"></i>
-  </a>
-  <a href="https://zalo.me/0984499986" target="_blank" class="zalo" title="Zalo">
-    Zalo
-  </a>
- 
-</div>
-<a href="tel:0933585567" class="hotline-ring" title="Gọi ngay">
-  <span class="hotline-text">0933.585.567</span>
-  <div class="hotline-icon">
-    <i class="fas fa-phone"></i>
-    <span class="circle"></span>
-    <span class="circle-fill"></span>
-  </div>
-</a>
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>CÔNG TY TNHH CƯỜNG HẢI</h3>
-      <p>Chuyên thu mua phế liệu các loại với giá cao nhất thị trường. Uy tín - Chuyên nghiệp - Thanh toán nhanh.</p>
-      <div style="margin-top: 20px;">
-        <a href="https://www.facebook.com/haicuong" target="_blank" style="margin-right: 15px; font-size: 24px;">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://zalo.me/0984499986" target="_blank" style="margin-right: 15px; font-size: 24px;">
-          <i class="fas fa-comment-dots"></i>
-        </a>
-      </div>
+        <div class="gallery-section">
+            <h2>Video Thực Tế Thu Mua Phế Liệu</h2>
+            <div class="gallery-grid" id="videoGallery"></div>
+        </div>
     </div>
 
-    <div class="footer-section">
-      <h3>LIÊN KẾT NHANH</h3>
-      <ul>
-        <li><a href="./index.html">Trang chủ</a></li>
-        <li><a href="./gioithieu.html">Giới thiệu</a></li>
-        <li><a href="./dichvu.html">Dịch vụ</a></li>
-        <li><a href="./banggia.html">Bảng giá</a></li>
-        <li><a href="./tintuc.html">Tin tức</a></li>
-        <li><a href="./lienhe.html">Liên hệ</a></li>
-      </ul>
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+        <div class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">‹</div>
+        <div class="lightbox-content" id="lightboxContent"></div>
+        <div class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">›</div>
     </div>
 
-    <div class="footer-section">
-      <h3>DỊCH VỤ</h3>
-      <ul>
-        <li><a href="./dichvu.html">Thu mua vải cây, vải khúc</a></li>
-        <li><a href="./dichvu.html">Thu mua phế liệu sắt thép</a></li>
-        <li><a href="./dichvu.html">Thu mua đồng nhôm inox</a></li>
-        <li><a href="./dichvu.html">Thanh lý xưởng may</a></li>
-      </ul>
-    </div>
+    <script>
+        const products = [
+            {
+                id: 'dong',
+                title: 'Thu mua phế liệu Đồng',
+                description: 'Thu mua phế liệu đồng đỏ, đồng vàng, đồng thau với giá cao nhất thị trường. Thanh toán nhanh chóng, uy tín.',
+                image: './img/sp5.jpg',
+                keywords: ['đồng', 'dong', 'phế liệu đồng', 'đồng đỏ', 'đồng vàng', 'đồng thau']
+            },
+            {
+                id: 'sat',
+                title: 'Thu mua phế liệu Sắt',
+                description: 'Thu mua sắt phế liệu, sắt thép các loại, sắt vụn giá cao. Đội ngũ chuyên nghiệp, thu mua tận nơi.',
+                image: './img/sp3.png',
+                keywords: ['sắt', 'sat', 'phế liệu sắt', 'sắt thép', 'sắt vụn', 'thep']
+            },
+            {
+                id: 'nhom',
+                title: 'Thu mua phế liệu Nhôm',
+                description: 'Thu mua nhôm phế liệu, nhôm thanh, nhôm tấm, nhôm đúc với giá tốt. Thanh toán ngay sau khi thu mua.',
+                image: './img/sp1.jpg',
+                keywords: ['nhôm', 'nhom', 'phế liệu nhôm', 'nhôm thanh', 'nhôm tấm']
+            },
+            {
+                id: 'day-cap',
+                title: 'Thu mua phế liệu dây cáp điện, dây đồng',
+                description: 'Thu mua dây cáp điện cũ, dây đồng, cáp điện phế liệu các loại. Giá cao, thu mua số lượng lớn.',
+                image: './img/sp6.jpg',
+                keywords: ['dây cáp', 'day cap', 'dây điện', 'dây đồng', 'cáp điện', 'cap dien']
+            },
+            {
+                id: 'inox',
+                title: 'Thu mua phế liệu Inox',
+                description: 'Thu mua inox phế liệu các loại: inox 304, 201, 430. Giá cao, thu mua tận nơi, thanh toán nhanh.',
+                image: './img/sp4.jpg',
+                keywords: ['inox', 'phế liệu inox', 'inox 304', 'inox 201', 'thép không gỉ']
+            },
+            {
+                id: 'niken',
+                title: 'Thu mua phế liệu Niken',
+                description: 'Thu mua phế liệu niken, hợp kim niken với giá cao. Chuyên thu mua số lượng lớn cho các xưởng, nhà máy.',
+                image: './img/sp7.webp',
+                keywords: ['niken', 'nikel', 'phế liệu niken', 'hợp kim niken']
+            },
+            {
+                id: 'hop-kim',
+                title: 'Thu mua phế liệu Hợp kim',
+                description: 'Thu mua hợp kim các loại: hợp kim nhôm, hợp kim đồng, hợp kim kẽm. Giá cạnh tranh nhất thị trường.',
+                image: './img/sp8.jpg',
+                keywords: ['hợp kim', 'hop kim', 'phế liệu hợp kim', 'hợp kim nhôm', 'hợp kim đồng']
+            },
+            {
+                id: 'chi',
+                title: 'Thu mua phế liệu Chì',
+                description: 'Thu mua chì phế liệu, chì ắc quy, chì tấm. Thu mua số lượng lớn, giá cao, thanh toán ngay.',
+                image: './img/sp9.jpg',
+                keywords: ['chì', 'chi', 'phế liệu chì', 'chì ắc quy', 'ac quy']
+            },
+            {
+                id: 'thiec',
+                title: 'Thu mua phế liệu Thiếc',
+                description: 'Thu mua thiếc phế liệu, thiếc hàn, hợp kim thiếc. Giá tốt, thu mua tận nơi, thanh toán liền tay.',
+                image: './img/sp10.jpg',
+                keywords: ['thiếc', 'thiec', 'phế liệu thiếc', 'thiếc hàn', 'hợp kim thiếc']
+            },
+            {
+                id: 'kem',
+                title: 'Thu mua phế liệu Kẽm',
+                description: 'Thu mua kẽm phế liệu, kẽm tấm, kẽm mạ. Thu mua số lượng lớn với giá cao nhất thị trường.',
+                image: './img/sp11.jpg',
+                keywords: ['kẽm', 'kem', 'phế liệu kẽm', 'kẽm tấm', 'kẽm mạ']
+            },
+            {
+                id: 'cong-nghiep',
+                title: 'Thu mua phế liệu công nghiệp khối lượng lớn',
+                description: 'Chuyên thu mua phế liệu công nghiệp với khối lượng lớn. Đội ngũ chuyên nghiệp, xe chuyên dụng, thanh toán ngay.',
+                image: './img/thumua1.jpg',
+                keywords: ['công nghiệp', 'cong nghiep', 'khối lượng lớn', 'phế liệu công nghiệp', 'nhà máy']
+            },
+            {
+                id: 'nha-xuong',
+                title: 'Thu mua xác nhà xưởng khối lượng lớn',
+                description: 'Thu mua, tháo dỡ xác nhà xưởng, công trình cũ. Giá cao, thi công an toàn, dọn dẹp sạch sẽ.',
+                image: './img/thumua2.jpg',
+                keywords: ['nhà xưởng', 'nha xuong', 'xác nhà', 'tháo dỡ', 'công trình cũ']
+            },
+            {
+                id: 'cong-trinh',
+                title: 'Thu mua phế liệu công trình khối lượng lớn',
+                description: 'Thu mua phế liệu từ các công trình xây dựng, cầu đường, hạ tầng. Thu mua số lượng lớn, giá tốt.',
+                image: './img/thumua3.jpg',
+                keywords: ['công trình', 'cong trinh', 'xây dựng', 'phế liệu công trình', 'cầu đường']
+            },
+            {
+                id: 'may-moc',
+                title: 'Thu mua phế liệu máy móc thanh lý giá cao',
+                description: 'Thu mua máy móc cũ, thiết bị công nghiệp thanh lý. Giá cao nhất thị trường, thu mua tận nơi.',
+                image: './img/sp2.jpg',
+                keywords: ['máy móc', 'may moc', 'thanh lý', 'thiết bị', 'máy móc cũ', 'thiết bị công nghiệp']
+            },
+            {
+                id: 'do-gia-dung',
+                title: 'Thu mua đồ gia dụng hỏng',
+                description: 'Thu mua đồ gia dụng cũ, hỏng: tủ lạnh, máy giặt, điều hòa, bếp gas. Giá cao, thu mua tận nhà.',
+                image: './img/sp6.jpg',
+                keywords: ['đồ gia dụng', 'do gia dung', 'tủ lạnh', 'máy giặt', 'điều hòa', 'đồ hỏng']
+            },
+            {
+                id: 'xe-co',
+                title: 'Thu mua xe cộ hư',
+                description: 'Thu mua xe máy hư, xe đạp cũ, xe cộ phế liệu. Giá cao, thu mua tận nơi, thủ tục nhanh gọn.',
+                image: './img/sp8.jpg',
+                keywords: ['xe cộ', 'xe co', 'xe máy hư', 'xe đạp cũ', 'xe hỏng', 'phế liệu xe']
+            },
+            {
+                id: 'thanhhoa',
+                title: 'Thu Mua Phế Liệu Tại Thanh Hóa – Cường Hải',
+                description: 'Công Ty TNHH Cường Hải chuyên thu mua phế liệu tại Thanh Hóa, giá cao, uy tín, phục vụ toàn tỉnh.',
+                image: './img/sp1.jpg',
+                keywords: ['phế liệu thanh hóa', 'thu mua phế liệu thanh hóa', 'cường hải', 'thu mua sắt đồng nhôm', 'phế liệu giá cao']
+            },
+            {
+                id: 'hanoi',
+                title: 'Thu mua phế liệu Hà Nội',
+                description: 'Công Ty TNHH Cường Hải chuyên thu mua phế liệu tại Hà Nội với giá cao, uy tín, phục vụ tận nơi 24/7.',
+                image: './img/sp9.jpg',
+                keywords: ['phế liệu hà nội', 'thu mua phế liệu hà nội', 'giá phế liệu hà nội', 'cường hải hà nội', 'thu mua đồng nhôm sắt hà nội']
+            },
+            {
+                id: 'danang',
+                title: 'Thu mua phế liệu Đà Nẵng',
+                description: 'Công Ty TNHH Cường Hải chuyên thu mua phế liệu tại Đà Nẵng với giá cao, uy tín, phục vụ tận nơi nhanh chóng.',
+                image: './img/sp11.jpg',
+                keywords: ['phế liệu đà nẵng', 'thu mua phế liệu đà nẵng', 'giá phế liệu đà nẵng', 'cường hải đà nẵng', 'thu mua đồng nhôm sắt đà nẵng']
+            },
+            {
+                id: 'ninhbinh',
+                title: 'Thu mua phế liệu Ninh Bình',
+                description: 'Công Ty TNHH Cường Hải chuyên thu mua phế liệu tại Ninh Bình giá cao, uy tín, phục vụ tận nơi, thanh toán nhanh.',
+                image: './img/sp10.jpg',
+                keywords: ['phế liệu ninh bình', 'thu mua phế liệu ninh bình', 'giá phế liệu ninh bình', 'cường hải ninh bình', 'thu mua đồng nhôm sắt ninh bình']
+            }
+        ];
 
-    <div class="footer-section">
-      <h3>THÔNG TIN LIÊN HỆ</h3>
-      <div class="footer-contact-info">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Phường Nam Sầm Sơn, Thanh Hóa</span>
-      </div>
-      <div class="footer-contact-info">
-        <i class="fas fa-phone"></i>
-        <a href="tel:0933585567">0933585567</a>
-      </div>
-      <div class="footer-contact-info">
-        <i class="fas fa-phone"></i>
-        <a href="tel:0989499939">0989499939</a>
-      </div>
-      <div class="footer-contact-info">
-        <i class="fas fa-clock"></i>
-        <span>Phục vụ 24/7</span>
-      </div>
-    </div>
-  </div>
+        let allMedia = [];
+        let currentMediaIndex = 0;
 
-  <div class="footer-bottom">
-    <p>© 2025 CÔNG TY TNHH CƯỜNG HẢI. Bảo lưu mọi quyền.</p>
-    <p>Website được thiết kế & tối ưu SEO bởi <a href="#">HOANG DUY Team</a></p>
-  </div>
-</footer>
+        function loadGallery() {
+            const imageGallery = document.getElementById('imageGallery');
+            const videoGallery = document.getElementById('videoGallery');
 
-<script src="search.js"></script>
+            for (let i = 1; i <= 41; i++) {
+                const imgDiv = document.createElement('div');
+                imgDiv.className = 'gallery-item';
+                imgDiv.innerHTML = `
+                    <img src="./img/anhh/a (${i}).jpg" alt="Hình ảnh thu mua phế liệu ${i}" loading="lazy">
+                    <div class="gallery-item-label">Hình ảnh ${i}</div>
+                `;
+                imgDiv.onclick = () => openLightbox('image', i);
+                imageGallery.appendChild(imgDiv);
+                allMedia.push({ type: 'image', index: i });
+            }
+
+            for (let i = 1; i <= 7; i++) {
+                const vidDiv = document.createElement('div');
+                vidDiv.className = 'gallery-item';
+                vidDiv.innerHTML = `
+                    <video preload="metadata">
+                        <source src="./img/anhh/vd (${i}).mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="gallery-item-label">Video ${i}</div>
+                `;
+                vidDiv.onclick = () => openLightbox('video', i);
+                videoGallery.appendChild(vidDiv);
+                allMedia.push({ type: 'video', index: i });
+            }
+        }
+
+        function openLightbox(type, index) {
+            const lightbox = document.getElementById('lightbox');
+            const content = document.getElementById('lightboxContent');
+
+            currentMediaIndex = allMedia.findIndex(item =>
+                item.type === type && item.index === index
+            );
+
+            showMediaInLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showMediaInLightbox() {
+            const content = document.getElementById('lightboxContent');
+            const media = allMedia[currentMediaIndex];
+
+            if (media.type === 'image') {
+                content.innerHTML = `<img src="./img/anhh/a (${media.index}).jpg" alt="Hình ảnh ${media.index}">`;
+            } else {
+                content.innerHTML = `
+                    <video controls autoplay>
+                        <source src="./img/anhh/vd (${media.index}).mp4" type="video/mp4">
+                    </video>
+                `;
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const content = document.getElementById('lightboxContent');
+            const video = content.querySelector('video');
+
+            if (video) {
+                video.pause();
+            }
+
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateLightbox(direction) {
+            currentMediaIndex += direction;
+
+            if (currentMediaIndex < 0) {
+                currentMediaIndex = allMedia.length - 1;
+            } else if (currentMediaIndex >= allMedia.length) {
+                currentMediaIndex = 0;
+            }
+
+            showMediaInLightbox();
+        }
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateLightbox(1);
+                }
+            }
+        });
+
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (query === '') {
+                return;
+            }
+
+            const results = products.filter(product => {
+                return product.keywords.some(keyword => keyword.includes(query)) ||
+                    product.title.toLowerCase().includes(query) ||
+                    product.description.toLowerCase().includes(query);
+            });
+
+            displayResults(results, query);
+        }
+
+        function searchByKeyword(keyword) {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.value = keyword;
+            performSearch();
+        }
+
+        function displayResults(results, query) {
+            const productsGrid = document.getElementById('productsGrid');
+            const resultsHeader = document.getElementById('resultsHeader');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+
+            productsGrid.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsHeader.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            resultsHeader.style.display = 'block';
+            resultsCount.textContent = `Tìm thấy ${results.length} kết quả cho "${query}"`;
+
+            results.forEach(product => {
+                const productCard = document.createElement('a');
+                productCard.href = `chitiet.html?id=${product.id}`;
+                productCard.className = 'product-card';
+
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <span class="product-price"style = " color: white">Liên hệ ngay</span>
+                    </div>
+                `;
+
+                productsGrid.appendChild(productCard);
+            });
+
+            productsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        window.onload = function() {
+            loadGallery();
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const keyword = urlParams.get('q');
+
+            if (keyword) {
+                document.getElementById('searchInput').value = keyword;
+                performSearch();
+            }
+        };
+    </script>
 </body>
 </html>
