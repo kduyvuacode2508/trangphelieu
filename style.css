@@ -923,3 +923,63 @@
     height: 60px;
   }
 }
+
+
+.video-section {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.video-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.video-container, .more-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.video-item {
+  width: 30%;
+  min-width: 280px;
+}
+
+.video-item video {
+  width: 100%;
+  height: 350px; /* ✅ Chiều cao video */
+  object-fit: cover; /* Giữ tỷ lệ video và cắt phần dư */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#showMoreBtn {
+  font-size: 20px;
+  margin-top: 40px;
+  padding: 25px 35px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#showMoreBtn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .video-item {
+    width: 90%;
+  }
+  .video-item video {
+    height: 250px; /* Giảm chiều cao trên điện thoại */
+  }
+}
+
+
+
