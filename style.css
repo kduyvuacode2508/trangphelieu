@@ -813,9 +813,113 @@
       max-width: 100%;
     }
   }
-  
+  /* ===== Nút gọi có số bên trái, icon rung bên phải ===== */
+.hotline-ring {
+  position: fixed;
+  bottom: 280px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px 12px 22px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
 
+.hotline-ring:hover {
+  background: #1eb85a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
 
-  
-  
-  
+.hotline-ring .hotline-text {
+  white-space: nowrap;
+}
+
+.hotline-ring .hotline-icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  color: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 0 0 rgba(37,211,102,0.4);
+  animation: shake 1.8s infinite linear;
+}
+
+/* Vòng tròn lan tỏa */
+.hotline-ring .hotline-icon .circle,
+.hotline-ring .hotline-icon .circle-fill {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hotline-ring .hotline-icon .circle {
+  width: 70px;
+  height: 70px;
+  background: rgba(37,211,102,0.3);
+  animation: pulse-ring 1.6s infinite;
+  z-index: 0;
+}
+
+.hotline-ring .hotline-icon .circle-fill {
+  width: 55px;
+  height: 55px;
+  background: rgba(37,211,102,0.5);
+  animation: pulse-fill 1.6s infinite;
+  z-index: 1;
+}
+
+/* Hiệu ứng animation */
+@keyframes pulse-ring {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+  70% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+@keyframes pulse-fill {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(15deg); }
+  20%, 40%, 60%, 80% { transform: rotate(-15deg); }
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+  .hotline-ring {
+    bottom: 60px;
+    right: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .hotline-ring .hotline-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .hotline-ring .hotline-icon .circle {
+    width: 60px;
+    height: 60px;
+  }
+}
