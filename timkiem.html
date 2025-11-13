@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="./img/CH.png">
+  <title>Tìm Kiếm Dịch Vụ Thu Mua - Công Ty TNHH Cường Hải</title>
+  <meta name="description" content="Tìm kiếm dịch vụ thu mua phế liệu: đồng, sắt, nhôm, inox, dây cáp điện và nhiều loại khác tại Cường Hải">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-section">
+    <div class="logo-circle">
+      <span>CH</span>
+    </div>
+    <div>
+      <h1>CÔNG TY TNHH CƯỜNG HẢI</h1>
+      <div class="company-info">Phường Nam Sầm Sơn - Uy tín, chuyên nghiệp</div>
+    </div>
+  </div>
+  <div class="contact-info">
+    <div>Hotline: <a href="tel:0933585567">0933585567</a></div>
+    <div><a href="tel:0989499939">0989499939</a></div>
+  </div>
+</header>
+
+<nav>
+  <a href="./index.html">Trang chủ</a>
+  <a href="./gioithieu.html">Giới thiệu</a>
+  <a href="./dichvu.html">Thu Mua Phế Liệu</a>
+  <a href="./banggia.html">Bảng giá</a>
+  <a href="./tintuc.html">Tin tức</a>
+  <a href="./lienhe.html">Liên hệ</a>
+  <a href="timkiem.html" class="header-seach"> <i class="fas fa-search"></i>Tìm Kiếm</a>
+</nav>
+<!-- Nút gọi nổi bên phải trên (hiện khi cuộn xuống) -->
+<a href="tel:0989499939" class="call-top" id="callTop">
+  <i class="fas fa-phone"></i> 0989499939
+</a>
+
+<section class="search-section">
+  <h1>TÌM KIẾM DỊCH VỤ THU MUA</h1>
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Nhập từ khóa tìm kiếm (VD: đồng, sắt, nhôm, inox...)"
+      autocomplete="off"
+    >
+    <button onclick="performSearch()"><i class="fas fa-search"></i> Tìm kiếm</button>
+  </div>
+
+  <div class="popular-keywords">
+    <h4>Từ khóa phổ biến:</h4>
+    <div class="keyword-tags">
+      <span class="keyword-tag" onclick="searchByKeyword('đồng')">Đồng</span>
+      <span class="keyword-tag" onclick="searchByKeyword('sắt')">Sắt</span>
+      <span class="keyword-tag" onclick="searchByKeyword('nhôm')">Nhôm</span>
+      <span class="keyword-tag" onclick="searchByKeyword('inox')">Inox</span>
+      <span class="keyword-tag" onclick="searchByKeyword('dây cáp')">Dây cáp điện</span>
+      <span class="keyword-tag" onclick="searchByKeyword('máy móc')">Máy móc</span>
+    </div>
+  </div>
+</section>
+
+<section class="results-section">
+  <div class="results-header" id="resultsHeader" style="display:none;">
+    <h2>Kết quả tìm kiếm</h2>
+    <p class="results-count" id="resultsCount"></p>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+
+  <div class="no-results" id="noResults" style="display:none;">
+    <i class="fas fa-search"></i>
+    <h3>Không tìm thấy kết quả</h3>
+    <p>Vui lòng thử lại với từ khóa khác</p>
+  </div>
+</section>
+
+<div class="contact-float">
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://m.me/haicuong" target="_blank" class="facebook2" title="Messenger">
+    <i class="fab fa-facebook-messenger"></i>
+  </a>
+  <a href="https://zalo.me/0984499986" target="_blank" class="zalo" title="Zalo">
+    Zalo
+  </a>
+  <a href="tel:0984499986" class="phone" title="Gọi ngay">
+    <i class="fas fa-phone"></i>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>CÔNG TY TNHH CƯỜNG HẢI</h3>
+      <p>Chuyên thu mua phế liệu các loại với giá cao nhất thị trường. Uy tín - Chuyên nghiệp - Thanh toán nhanh.</p>
+      <div style="margin-top: 20px;">
+        <a href="https://www.facebook.com/haicuong" target="_blank" style="margin-right: 15px; font-size: 24px;">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://zalo.me/0984499986" target="_blank" style="margin-right: 15px; font-size: 24px;">
+          <i class="fas fa-comment-dots"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>LIÊN KẾT NHANH</h3>
+      <ul>
+        <li><a href="./index.html">Trang chủ</a></li>
+        <li><a href="./gioithieu.html">Giới thiệu</a></li>
+        <li><a href="./dichvu.html">Dịch vụ</a></li>
+        <li><a href="./banggia.html">Bảng giá</a></li>
+        <li><a href="./tintuc.html">Tin tức</a></li>
+        <li><a href="./lienhe.html">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>DỊCH VỤ</h3>
+      <ul>
+        <li><a href="./dichvu.html">Thu mua vải cây, vải khúc</a></li>
+        <li><a href="./dichvu.html">Thu mua phế liệu sắt thép</a></li>
+        <li><a href="./dichvu.html">Thu mua đồng nhôm inox</a></li>
+        <li><a href="./dichvu.html">Thanh lý xưởng may</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>THÔNG TIN LIÊN HỆ</h3>
+      <div class="footer-contact-info">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Phường Nam Sầm Sơn, Thanh Hóa</span>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-phone"></i>
+        <a href="tel:0933585567">0933585567</a>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-phone"></i>
+        <a href="tel:0989499939">0989499939</a>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-clock"></i>
+        <span>Phục vụ 24/7</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CÔNG TY TNHH CƯỜNG HẢI. Bảo lưu mọi quyền.</p>
+    <p>Website được thiết kế & tối ưu SEO bởi <a href="#">HOANG DUY Team</a></p>
+  </div>
+</footer>
+
+<script src="search.js"></script>
+</body>
+</html>

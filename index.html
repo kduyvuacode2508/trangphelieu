@@ -495,40 +495,7 @@
       transform: translateY(-3px);
     }
 
-    .contact-float {
-      position: fixed;
-      right: 20px;
-      bottom: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 9999;
-    }
-
-    .contact-float a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      font-size: 26px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-
-    .contact-float a:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-    }
-
-    .facebook1 { background: #1877f2; }
-    .facebook2 { background: #3b5998; }
-    .zalo { background: #0068ff; font-size: 18px; font-weight: 700; }
-    .phone { background: #25d366; }
-
+   
     footer {
       background: #1a1a1a;
       color: #aaa;
@@ -677,10 +644,11 @@
 <nav>
   <a href="./index.html">Trang chủ</a>
   <a href="./gioithieu.html">Giới thiệu</a>
-  <a href="./dichvu.html">Dịch vụ</a>
+  <a href="./dichvu.html">Thu Mua Phế Liệu</a>
   <a href="./banggia.html">Bảng giá</a>
   <a href="./tintuc.html">Tin tức</a>
   <a href="./lienhe.html">Liên hệ</a>
+  <a href="timkiem.html" class="header-seach"> <i class="fas fa-search"></i>Tìm Kiếm</a>
 </nav>
 <!-- Nút gọi nổi bên phải trên (hiện khi cuộn xuống) -->
 <a href="tel:0989499939" class="call-top" id="callTop">
@@ -734,6 +702,46 @@
     </div>
   </div>
 </div>
+
+<section class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>GIỚI THIỆU CÔNG TY TNHH CƯỜNG HẢI</h2>
+      <p>
+        <strong>Công ty TNHH Cường Hải</strong> là đơn vị <strong>thu mua phế liệu hàng đầu tại Việt Nam</strong>, 
+        với hơn <strong>10 năm kinh nghiệm</strong> hoạt động trong lĩnh vực thu mua và xử lý phế liệu công nghiệp, dân dụng và thương mại.
+        Chúng tôi đã thực hiện hàng trăm dự án thu mua với <strong>giá trị lên tới hàng trăm triệu đến hàng tỷ đồng</strong>,
+        phục vụ nhiều doanh nghiệp lớn tại Thanh Hóa, Nghệ An, Hà Nội, TP.HCM và toàn quốc.
+      </p>
+
+      <p>
+        Từ những <strong>lô hàng nhỏ lẻ vài chục kg</strong> đến các <strong>dự án thanh lý quy mô lớn hàng nghìn tấn</strong>, 
+        Cường Hải đều cam kết mang đến <strong>mức giá cao nhất thị trường</strong>, <strong>thanh toán nhanh chóng trong ngày</strong> 
+        và <strong>dịch vụ chuyên nghiệp – tận nơi – không phí phát sinh</strong>.
+      </p>
+
+      <p>
+        Chúng tôi đã từng ký hợp đồng thu mua phế liệu cho nhiều <strong>khu công nghiệp, nhà máy dệt, xưởng cơ khí, 
+        công trình xây dựng lớn</strong>... với tổng giá trị hợp đồng lên tới 
+        <strong>5 – 10 tỷ đồng/dự án</strong>. Cường Hải là đối tác tin cậy của hàng nghìn khách hàng doanh nghiệp 
+        trên khắp cả nước.
+      </p>
+
+      <p>
+        Với phương châm <strong>“Uy tín – Chuyên nghiệp – Giá cao vượt trội”</strong>, 
+        Cường Hải không ngừng cải tiến quy trình thu mua, đầu tư hệ thống xe tải – xe cẩu hiện đại, 
+        và mở rộng đội ngũ nhân viên thu gom tận nơi nhằm phục vụ khách hàng nhanh chóng, hiệu quả, an toàn.
+      </p>
+
+      <a href="./gioithieu.html" class="about-btn">📞 Tìm hiểu thêm về CƯỜNG HẢI</a>
+    </div>
+
+    <div class="about-image">
+      <img src="./img/banner.jpg" alt="Giới thiệu Công ty Cường Hải">
+    </div>
+  </div>
+</section>
+
 
 <section>
   <h2>VÌ SAO CHỌN CƯỜNG HẢI?</h2>
@@ -949,6 +957,10 @@
     <i class="fas fa-phone"></i>
   </a>
 </div>
+<div class="container">
+  <h2>DANH SÁCH DỊCH VỤ THU MUA PHẾ LIỆU</h2>
+  <div class="products-grid" id="productsGrid"></div>
+</div>
 
 <footer>
   <div class="footer-content">
@@ -1016,5 +1028,38 @@
 </footer>
 
 <script src="main.js"></script>
+<script src="search.js"></script>
+<script src="detail.js"></script>
+
+<script>
+  // Hàm hiển thị toàn bộ dịch vụ có trong products[]
+  function showAllServices() {
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+
+    productsGrid.innerHTML = ''; // Xóa nội dung cũ
+
+    products.forEach(product => {
+      const productCard = document.createElement('a');
+      productCard.href = `chitiet.html?id=${product.id}`;
+      productCard.className = 'product-card';
+
+      productCard.innerHTML = `
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">${product.title}</h3>
+          <p class="product-description">${product.description}</p>
+          <span class="product-price">Liên hệ ngay</span>
+        </div>
+      `;
+
+      productsGrid.appendChild(productCard);
+    });
+  }
+
+  // Gọi hàm khi trang load
+  window.onload = showAllServices;
+</script>
+
 </body>
 </html>

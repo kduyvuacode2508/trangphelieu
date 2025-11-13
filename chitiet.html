@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" type="image/png" href="./img/CH.png">
+  <title id="pageTitle">Chi Tiết Dịch Vụ - Công Ty TNHH Cường Hải</title>
+  <meta name="description" content="Chi tiết dịch vụ thu mua phế liệu tại Cường Hải Sầm Sơn">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .detail-section {
+      padding: 60px 10%;
+      background: #f8f9fa;
+    }
+
+    .detail-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+    }
+
+    .detail-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .detail-image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .detail-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .detail-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .detail-category {
+      display: inline-block;
+      background: #00b050;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      width: fit-content;
+    }
+
+    .detail-title {
+      font-size: 36px;
+      color: #004c8c;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .detail-description {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .detail-features {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .detail-features h3 {
+      font-size: 20px;
+      color: #004c8c;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .detail-features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .detail-features li {
+      padding: 10px 0;
+      color: #555;
+      font-size: 16px;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .detail-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #00b050;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .detail-cta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .detail-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .detail-btn-primary {
+      background: linear-gradient(135deg, #008000 0%, #00b050 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,128,0,0.3);
+    }
+
+    .detail-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,128,0,0.4);
+    }
+
+    .detail-btn-secondary {
+      background: white;
+      color: #004c8c;
+      border: 2px solid #004c8c;
+    }
+
+    .detail-btn-secondary:hover {
+      background: #004c8c;
+      color: white;
+    }
+
+    .detail-content {
+      padding: 40px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .detail-content h2 {
+      font-size: 28px;
+      color: #004c8c;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .detail-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .detail-process {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      margin: 30px 0;
+    }
+
+    .detail-process h3 {
+      font-size: 24px;
+      color: #004c8c;
+      margin-bottom: 25px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .process-number {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #008000 0%, #00b050 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 auto 15px;
+    }
+
+    .process-step h4 {
+      font-size: 16px;
+      color: #004c8c;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .process-step p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .why-choose {
+      margin-top: 40px;
+    }
+
+    .why-choose h3 {
+      font-size: 24px;
+      color: #004c8c;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 15px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      background: #e8f5e9;
+      transform: translateX(5px);
+    }
+
+    .benefit-icon {
+      font-size: 32px;
+      color: #00b050;
+      flex-shrink: 0;
+    }
+
+    .benefit-text h4 {
+      font-size: 18px;
+      color: #004c8c;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .benefit-text p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .contact-cta {
+      background: linear-gradient(135deg, #004c8c 0%, #006bb3 100%);
+      padding: 40px;
+      text-align: center;
+      border-radius: 12px;
+      margin-top: 40px;
+      color: white;
+    }
+
+    .contact-cta h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .contact-cta p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+
+    .contact-cta .detail-cta {
+      justify-content: center;
+    }
+
+    .breadcrumb {
+      padding: 20px 10%;
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .breadcrumb-item a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .breadcrumb-item a:hover {
+      color: #008000;
+    }
+
+    .breadcrumb-item.active {
+      color: #004c8c;
+      font-weight: 600;
+    }
+
+    .breadcrumb-separator {
+      color: #999;
+    }
+
+    @media(max-width: 1024px) {
+      .detail-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .detail-section {
+        padding: 40px 5%;
+      }
+
+      .detail-hero {
+        padding: 25px;
+      }
+
+      .detail-title {
+        font-size: 28px;
+      }
+
+      .detail-description {
+        font-size: 16px;
+      }
+
+      .detail-content {
+        padding: 25px;
+      }
+
+      .detail-content h2 {
+        font-size: 24px;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-cta {
+        flex-direction: column;
+      }
+
+      .detail-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .breadcrumb {
+        padding: 15px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-section">
+    <div class="logo-circle">
+      <span>CH</span>
+    </div>
+    <div>
+      <h1>CÔNG TY TNHH CƯỜNG HẢI</h1>
+      <div class="company-info">Phường Nam Sầm Sơn - Uy tín, chuyên nghiệp</div>
+    </div>
+  </div>
+  <div class="contact-info">
+    <div>Hotline: <a href="tel:0933585567">0933585567</a></div>
+    <div><a href="tel:0989499939">0989499939</a></div>
+  </div>
+</header>
+
+<nav>
+  <a href="./index.html">Trang chủ</a>
+  <a href="./gioithieu.html">Giới thiệu</a>
+  <a href="./dichvu.html">Thu Mua Phế Liệu</a>
+  <a href="./banggia.html">Bảng giá</a>
+  <a href="./tintuc.html">Tin tức</a>
+  <a href="./lienhe.html">Liên hệ</a>
+  <a href="timkiem.html" class="header-seach"> <i class="fas fa-search"></i>Tìm Kiếm</a>
+</nav>
+<!-- Nút gọi nổi bên phải trên (hiện khi cuộn xuống) -->
+<a href="tel:0989499939" class="call-top" id="callTop">
+  <i class="fas fa-phone"></i> 0989499939
+</a>
+
+<div class="breadcrumb">
+  <ul class="breadcrumb-list">
+    <li class="breadcrumb-item"><a href="./index.html">Trang chủ</a></li>
+    <li class="breadcrumb-separator">/</li>
+    <li class="breadcrumb-item"><a href="./timkiem.html">Tìm kiếm</a></li>
+    <li class="breadcrumb-separator">/</li>
+    <li class="breadcrumb-item active" id="breadcrumbCurrent">Chi tiết dịch vụ</li>
+  </ul>
+</div>
+
+<section class="detail-section">
+  <div class="detail-container">
+    <div class="detail-hero">
+      <div class="detail-image-wrapper">
+        <img id="productImage" src="" alt="" class="detail-image">
+      </div>
+
+      <div class="detail-info">
+        <span class="detail-category">DỊCH VỤ THU MUA</span>
+        <h1 class="detail-title" id="productTitle"></h1>
+        <p class="detail-description" id="productDescription"></p>
+
+        <div class="detail-features" id="productFeatures">
+          <h3>Ưu điểm dịch vụ:</h3>
+          <ul id="featuresList"></ul>
+        </div>
+
+        <div class="detail-cta">
+          <a href="tel:0933585567" class="detail-btn detail-btn-primary">
+            <i class="fas fa-phone"></i>
+            Liên hệ ngay: 0933585567
+          </a>
+          <a href="./lienhe.html" class="detail-btn detail-btn-secondary">
+            <i class="fas fa-envelope"></i>
+            Gửi yêu cầu
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-content">
+      <h2 id="contentTitle"></h2>
+      <div id="detailContent"></div>
+
+      <div class="detail-process">
+        <h3>QUY TRÌNH THU MUA 4 BƯỚC ĐơN GIẢN</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-number">1</div>
+            <h4>Liên hệ</h4>
+            <p>Gọi hotline hoặc gửi yêu cầu qua website</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">2</div>
+            <h4>Báo giá</h4>
+            <p>Chúng tôi báo giá nhanh hoặc đến tận nơi khảo sát</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">3</div>
+            <h4>Thu mua</h4>
+            <p>Đội ngũ chuyên nghiệp đến thu mua ngay</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">4</div>
+            <h4>Thanh toán</h4>
+            <p>Thanh toán ngay sau khi hoàn tất</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-choose">
+        <h3>TẠI SAO CHỌN CƯỜNG HẢI?</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">💰</div>
+            <div class="benefit-text">
+              <h4>Giá Cao Nhất</h4>
+              <p>Cam kết giá thu mua cao nhất thị trường, cạnh tranh nhất khu vực</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-text">
+              <h4>Nhanh Chóng</h4>
+              <p>Thu mua và thanh toán trong ngày, không để khách hàng chờ đợi</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✅</div>
+            <div class="benefit-text">
+              <h4>Uy Tín</h4>
+              <p>Hơn 10 năm kinh nghiệm, được hơn 5000 khách hàng tin tưởng</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🚚</div>
+            <div class="benefit-text">
+              <h4>Tận Nơi</h4>
+              <p>Đội ngũ chuyên nghiệp đến tận nơi thu mua, dọn dẹp sạch sẽ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <h3>BẠN CẦN BÁN PHẾ LIỆU?</h3>
+        <p>Liên hệ ngay với chúng tôi để nhận báo giá tốt nhất!</p>
+        <div class="detail-cta">
+          <a href="tel:0933585567" class="detail-btn detail-btn-primary">
+            <i class="fas fa-phone"></i>
+            0933585567
+          </a>
+          <a href="tel:0989499939" class="detail-btn detail-btn-primary">
+            <i class="fas fa-phone"></i>
+            0989499939
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-float">
+  <a href="https://www.facebook.com/haicuong" target="_blank" class="facebook1" title="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://m.me/haicuong" target="_blank" class="facebook2" title="Messenger">
+    <i class="fab fa-facebook-messenger"></i>
+  </a>
+  <a href="https://zalo.me/0984499986" target="_blank" class="zalo" title="Zalo">
+    Zalo
+  </a>
+  <a href="tel:0984499986" class="phone" title="Gọi ngay">
+    <i class="fas fa-phone"></i>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>CÔNG TY TNHH CƯỜNG HẢI</h3>
+      <p>Chuyên thu mua phế liệu các loại với giá cao nhất thị trường. Uy tín - Chuyên nghiệp - Thanh toán nhanh.</p>
+      <div style="margin-top: 20px;">
+        <a href="https://www.facebook.com/haicuong" target="_blank" style="margin-right: 15px; font-size: 24px;">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://zalo.me/0984499986" target="_blank" style="margin-right: 15px; font-size: 24px;">
+          <i class="fas fa-comment-dots"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>LIÊN KẾT NHANH</h3>
+      <ul>
+        <li><a href="./index.html">Trang chủ</a></li>
+        <li><a href="./gioithieu.html">Giới thiệu</a></li>
+        <li><a href="./dichvu.html">Dịch vụ</a></li>
+        <li><a href="./banggia.html">Bảng giá</a></li>
+        <li><a href="./tintuc.html">Tin tức</a></li>
+        <li><a href="./lienhe.html">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>DỊCH VỤ</h3>
+      <ul>
+        <li><a href="./dichvu.html">Thu mua vải cây, vải khúc</a></li>
+        <li><a href="./dichvu.html">Thu mua phế liệu sắt thép</a></li>
+        <li><a href="./dichvu.html">Thu mua đồng nhôm inox</a></li>
+        <li><a href="./dichvu.html">Thanh lý xưởng may</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>THÔNG TIN LIÊN HỆ</h3>
+      <div class="footer-contact-info">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Phường Nam Sầm Sơn, Thanh Hóa</span>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-phone"></i>
+        <a href="tel:0933585567">0933585567</a>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-phone"></i>
+        <a href="tel:0989499939">0989499939</a>
+      </div>
+      <div class="footer-contact-info">
+        <i class="fas fa-clock"></i>
+        <span>Phục vụ 24/7</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 CÔNG TY TNHH CƯỜNG HẢI. Bảo lưu mọi quyền.</p>
+    <p>Website được thiết kế & tối ưu SEO bởi <a href="#">HOANG DUY Team</a></p>
+  </div>
+</footer>
+
+<script src="detail.js"></script>
+</body>
+</html>

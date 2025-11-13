@@ -470,11 +470,16 @@
   <nav>
     <a href="./index.html">Trang chủ</a>
     <a href="./gioithieu.html">Giới thiệu</a>
-    <a href="./dichvu.html">Dịch vụ</a>
+    <a href="./dichvu.html">Thu Mua Phế Liệu</a>
     <a href="./banggia.html">Bảng giá</a>
     <a href="./tintuc.html">Tin tức</a>
     <a href="./lienhe.html">Liên hệ</a>
+    <a href="timkiem.html" class="header-seach"> <i class="fas fa-search"></i>Tìm Kiếm</a>
   </nav>
+  <!-- Nút gọi nổi bên phải trên (hiện khi cuộn xuống) -->
+  <a href="tel:0989499939" class="call-top" id="callTop">
+    <i class="fas fa-phone"></i> 0989499939
+  </a>
   <div class="banner-slider">
     <div class="slides">
       <div class="slide active">
@@ -543,6 +548,7 @@
         <div class="price-box">Giá: Liên hệ để có báo giá tốt nhất</div>
       </div>
     </div>
+   
 
     <h2>Quy Trình Thu Mua Phế Liệu Sắt Thép</h2>
 
@@ -663,6 +669,10 @@
       &#9742;
     </a>
   </div>
+  <div class="container">
+    <h2>DANH SÁCH DỊCH VỤ THU MUA PHẾ LIỆU</h2>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
 
   <footer>
     <p><strong>Công ty TNHH CƯỜNG HẢI</strong> - Phường Nam, Sầm Sơn</p>
@@ -672,5 +682,38 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="main.js"></script>
+  <script src="search.js"></script>
+  <script src="detail.js"></script>
+
+<script>
+  // Hàm hiển thị toàn bộ dịch vụ có trong products[]
+  function showAllServices() {
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+
+    productsGrid.innerHTML = ''; // Xóa nội dung cũ
+
+    products.forEach(product => {
+      const productCard = document.createElement('a');
+      productCard.href = `chitiet.html?id=${product.id}`;
+      productCard.className = 'product-card';
+
+      productCard.innerHTML = `
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+        <div class="product-info">
+          <h3 class="product-title">${product.title}</h3>
+          <p class="product-description">${product.description}</p>
+          <span class="product-price">Liên hệ ngay</span>
+        </div>
+      `;
+
+      productsGrid.appendChild(productCard);
+    });
+  }
+
+  // Gọi hàm khi trang load
+  window.onload = showAllServices;
+</script>
+
 </body>
 </html>
