@@ -1,10 +1,29 @@
 const products = [
   {
+    id: 'linh-kien-dien-tu',
+    title: 'Thu mua linh kiện điện tử – bo mạch',
+    description: 'Thu mua linh kiện điện tử, bo mạch, mainboard, IC, chip, tụ – điện trở, hàng tồn kho giá cao.',
+    image: './img/sp2.jpg',
+    keywords: [
+      'linh kiện điện tử', 'linh kien dien tu',
+      'bo mạch điện tử', 'bo mach',
+      'mainboard', 'ic điện tử', 'chip ic', 
+      'thu mua linh kiện', 'linh kiện tồn kho'
+    ]
+  },
+  {
     id: 'nha-xuong-thanh-ly',
     title: 'Thu mua nhà xưởng thanh lý',
     description: 'Thu mua trọn gói nhà xưởng thanh lý, máy móc, tôn mái, sắt thép. Giá cao – thanh toán nhanh.',
     image: './img/sp14.jpg',
     keywords: ['nhà xưởng thanh lý', 'nha xuong thanh ly', 'thanh lý nhà xưởng', 'thanh ly nha xuong', 'tôn mái', 'máy móc thanh lý']
+  },
+  {
+    id: 'xe-co',
+    title: 'Thu mua xe cộ hư,xe cũ ',
+    description: 'Thu mua xe máy hư, xe đạp cũ, xe cộ phế liệu. Giá cao, thu mua tận nơi, thủ tục nhanh gọn.',
+    image: './img/sp12.jpg',
+    keywords: ['xe cộ', 'xe co', 'xe máy hư', 'xe đạp cũ', 'xe hỏng', 'phế liệu xe']
   },
   {
     id: 'ton-cu',
@@ -24,18 +43,7 @@ const products = [
       'khung thép tiền chế', 'lap dung khung thep'
     ]
   },
-  {
-    id: 'linh-kien-dien-tu',
-    title: 'Thu mua linh kiện điện tử – bo mạch',
-    description: 'Thu mua linh kiện điện tử, bo mạch, mainboard, IC, chip, tụ – điện trở, hàng tồn kho giá cao.',
-    image: './img/sp2.jpg',
-    keywords: [
-      'linh kiện điện tử', 'linh kien dien tu',
-      'bo mạch điện tử', 'bo mach',
-      'mainboard', 'ic điện tử', 'chip ic', 
-      'thu mua linh kiện', 'linh kiện tồn kho'
-    ]
-  },
+ 
     {
       id: 'dong',
       title: 'Thu mua phế liệu Đồng',
@@ -141,13 +149,7 @@ const products = [
       image: './img/sp6.jpg',
       keywords: ['đồ gia dụng', 'do gia dung', 'tủ lạnh', 'máy giặt', 'điều hòa', 'đồ hỏng']
     },
-    {
-      id: 'xe-co',
-      title: 'Thu mua xe cộ hư',
-      description: 'Thu mua xe máy hư, xe đạp cũ, xe cộ phế liệu. Giá cao, thu mua tận nơi, thủ tục nhanh gọn.',
-      image: './img/sp12.jpg',
-      keywords: ['xe cộ', 'xe co', 'xe máy hư', 'xe đạp cũ', 'xe hỏng', 'phế liệu xe']
-    },
+    
     {
         id: 'thanhhoa',
         title: 'Thu Mua Phế Liệu Tại Thanh Hóa – Cường Hải',
