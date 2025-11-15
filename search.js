@@ -1,5 +1,30 @@
 const products = [
   {
+    id: 'nha-xuong-thanh-ly',
+    title: 'Thu mua nhà xưởng thanh lý',
+    description: 'Thu mua trọn gói nhà xưởng thanh lý, máy móc, tôn mái, sắt thép. Giá cao – thanh toán nhanh.',
+    image: './img/sp14.jpg',
+    keywords: ['nhà xưởng thanh lý', 'nha xuong thanh ly', 'thanh lý nhà xưởng', 'thanh ly nha xuong', 'tôn mái', 'máy móc thanh lý']
+  },
+  {
+    id: 'ton-cu',
+    title: 'Thu mua tôn cũ – tôn kẽm cũ',
+    description: 'Thu mua tôn cũ, tôn mái nhà xưởng, tôn kẽm. Thu mua tận nơi – giá cao.',
+    image: './img/sp15.jpg',
+    keywords: ['tôn cũ', 'ton cu', 'tôn kẽm', 'ton kem', 'tôn mái', 'tôn nhà xưởng']
+  },
+  {
+    id: 'lapp-dung-nha-xuong',
+    title: 'Lắp dựng nhà xưởng công nghiệp',
+    description: 'Thi công – lắp dựng nhà xưởng công nghiệp trọn gói: khung thép, mái tôn, nền xưởng, vách tôn.',
+    image: './img/sp16.jpg',
+    keywords: [
+      'lắp dựng nhà xưởng', 'lap dung nha xuong', 
+      'thi công nhà xưởng', 'nha xuong cong nghiep', 
+      'khung thép tiền chế', 'lap dung khung thep'
+    ]
+  },
+  {
     id: 'linh-kien-dien-tu',
     title: 'Thu mua linh kiện điện tử – bo mạch',
     description: 'Thu mua linh kiện điện tử, bo mạch, mainboard, IC, chip, tụ – điện trở, hàng tồn kho giá cao.',
@@ -151,32 +176,7 @@ const products = [
         image: './img/sp10.jpg',
         keywords: ['phế liệu ninh bình', 'thu mua phế liệu ninh bình', 'giá phế liệu ninh bình', 'cường hải ninh bình', 'thu mua đồng nhôm sắt ninh bình']
       },
-      {
-        id: 'nha-xuong-thanh-ly',
-        title: 'Thu mua nhà xưởng thanh lý',
-        description: 'Thu mua trọn gói nhà xưởng thanh lý, máy móc, tôn mái, sắt thép. Giá cao – thanh toán nhanh.',
-        image: './img/sp14.jpg',
-        keywords: ['nhà xưởng thanh lý', 'nha xuong thanh ly', 'thanh lý nhà xưởng', 'thanh ly nha xuong', 'tôn mái', 'máy móc thanh lý']
-      },
-      {
-        id: 'ton-cu',
-        title: 'Thu mua tôn cũ – tôn kẽm cũ',
-        description: 'Thu mua tôn cũ, tôn mái nhà xưởng, tôn kẽm. Thu mua tận nơi – giá cao.',
-        image: './img/sp15.jpg',
-        keywords: ['tôn cũ', 'ton cu', 'tôn kẽm', 'ton kem', 'tôn mái', 'tôn nhà xưởng']
-      },
-      {
-        id: 'lapp-dung-nha-xuong',
-        title: 'Lắp dựng nhà xưởng công nghiệp',
-        description: 'Thi công – lắp dựng nhà xưởng công nghiệp trọn gói: khung thép, mái tôn, nền xưởng, vách tôn.',
-        image: './img/sp16.jpg',
-        keywords: [
-          'lắp dựng nhà xưởng', 'lap dung nha xuong', 
-          'thi công nhà xưởng', 'nha xuong cong nghiep', 
-          'khung thép tiền chế', 'lap dung khung thep'
-        ]
-      },
-     
+      
       
       
       
