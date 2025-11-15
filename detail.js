@@ -1052,6 +1052,208 @@ const productDetails = {
     </p>
   `
 },
+'nha-xuong-thanh-ly': {
+  title: 'Thu mua nhà xưởng thanh lý giá cao',
+  description: 'Thu mua toàn bộ nhà xưởng thanh lý: máy móc, sắt thép, tôn mái, thiết bị, vật tư. Giá cao, thu mua trọn gói, dọn dẹp sạch sẽ.',
+  image: './img/sp14.jpg',
+  features: [
+    'Thu mua trọn gói nhà xưởng thanh lý',
+    'Bốc xếp – tháo dỡ chuyên nghiệp',
+    'Giá cao, thanh toán nhanh',
+    'Có đội xe tải & xe cẩu',
+    'Thu mua vật liệu + máy móc'
+  ],
+  content: `
+    <h3>Thu Mua Nhà Xưởng Thanh Lý Giá Cao – Trọn Gói</h3>
+    <p>
+      Cường Hải chuyên thu mua toàn bộ nhà xưởng thanh lý gồm: máy móc, sắt thép, tôn mái, khung kèo,
+      hệ thống điện – ống nước, thiết bị sản xuất và toàn bộ vật tư trong xưởng.
+    </p>
+
+    <h3>Hạng Mục Thu Mua</h3>
+    <p>
+      • Máy móc công nghiệp: máy dệt, máy may, CNC, máy ép, motor...<br>
+      • Khung kèo thép, cột thép, xà gồ<br>
+      • Tôn mái, tôn vách, tôn cách nhiệt<br>
+      • Dây điện, cáp điện, máng cáp<br>
+      • Kho bãi – hàng tồn – thiết bị phụ trợ
+    </p>
+
+    <h3>Dịch Vụ Trọn Gói</h3>
+    <p>
+      ✓ Khảo sát báo giá nhanh<br>
+      ✓ Thu mua toàn bộ – không bỏ sót<br>
+      ✓ Tháo dỡ – cắt – bốc xếp chuyên nghiệp<br>
+      ✓ Dọn dẹp mặt bằng sạch sẽ<br>
+      ✓ Thanh toán tại chỗ ngay khi hoàn tất
+    </p>
+
+    <h3>Liên Hệ</h3>
+    <p><strong>Hotline:</strong> 0933.585.567 – 0989.499.939</p>
+  `
+},
+'ton-cu': {
+  title: 'Thu mua tôn cũ – tôn kẽm cũ',
+  description: 'Thu mua tôn cũ, tôn kẽm, tôn mái nhà xưởng sau tháo dỡ. Giá cao, thu gom tận nơi, có xe cẩu.',
+  image: './img/sp15.jpg',
+  features: [
+    'Thu mua tôn cũ các loại',
+    'Nhận tháo dỡ tôn mái nhà xưởng',
+    'Thu gom tận nơi',
+    'Giá cao hơn thị trường',
+    'Xe tải – xe cẩu hỗ trợ'
+  ],
+  content: `
+    <h3>Thu Mua Tôn Cũ – Tôn Kẽm Cũ Giá Cao</h3>
+    <p>
+      Chúng tôi chuyên thu mua tôn mái, tôn vách, tôn kẽm từ công trình cũ, nhà xưởng tháo dỡ,
+      kho bãi, nhà dân… với giá cao và thu gom tận nơi.
+    </p>
+
+    <h3>Các Loại Tôn Thu Mua</h3>
+    <p>
+      • Tôn kẽm<br>
+      • Tôn lạnh<br>
+      • Tôn màu<br>
+      • Tôn cách nhiệt – tôn 3 lớp<br>
+      • Tôn vách, tôn lợp mái nhà xưởng
+    </p>
+
+    <h3>Dịch Vụ Cung Cấp</h3>
+    <p>
+      ✓ Tháo dỡ tôn mái, tôn vách chuyên nghiệp<br>
+      ✓ Thu gom tận nơi – miễn phí vận chuyển<br>
+      ✓ Cân tại chỗ – thanh toán nhanh<br>
+      ✓ Không ngại số lượng ít hoặc nhiều
+    </p>
+
+    <h3>Liên Hệ Báo Giá Ngay</h3>
+    <p><strong>Hotline:</strong> 0933.585.567 – 0989.499.939</p>
+  `
+},
+'lapp-dung-nha-xuong': {
+  title: 'Lắp dựng nhà xưởng công nghiệp trọn gói',
+  description: 'Nhận thi công – lắp dựng nhà xưởng công nghiệp trọn gói: khung thép, mái tôn, nền móng, nhà kho. Uy tín – giá tốt – tiến độ nhanh.',
+  image: './img/sp16.jpg',
+  features: [
+    'Thi công khung thép tiền chế',
+    'Lắp đặt mái tôn – tôn cách nhiệt',
+    'Làm nền móng – sàn bê tông',
+    'Lắp dựng nhà kho – nhà xưởng mới',
+    'Tiến độ nhanh – an toàn – chuyên nghiệp'
+  ],
+  content: `
+    <h3>Dịch Vụ Lắp Dựng Nhà Xưởng Công Nghiệp Trọn Gói</h3>
+    <p>
+      Cường Hải chuyên nhận thi công và lắp dựng nhà xưởng công nghiệp trọn gói, bao gồm 
+      khung thép tiền chế, mái tôn, vách tôn, nền móng, toàn bộ kết cấu thép theo yêu cầu của chủ đầu tư.
+      Cam kết tiến độ nhanh – an toàn – chất lượng cao.
+    </p>
+
+    <h3>Hạng Mục Thi Công</h3>
+    <p>
+      • Lắp dựng khung thép tiền chế<br>
+      • Lợp mái tôn – tôn lạnh – tôn cách nhiệt<br>
+      • Thi công nền móng – sàn bê tông<br>
+      • Lắp dựng nhà kho, nhà xưởng mới<br>
+      • Lắp đặt hệ thống cửa, thông gió, chống nóng<br>
+      • Lắp đặt hệ thống điện – nước cơ bản trong xưởng
+    </p>
+
+    <h3>Ưu Điểm Khi Thi Công Cùng Cường Hải</h3>
+    <p>
+      ✓ Đội thi công giàu kinh nghiệm<br>
+      ✓ Đảm bảo an toàn lao động tuyệt đối<br>
+      ✓ Báo giá rõ ràng – không phát sinh chi phí<br>
+      ✓ Máy móc đầy đủ: xe cẩu, xe nâng, máy hàn, máy cắt<br>
+      ✓ Tiến độ nhanh – đạt chuẩn kỹ thuật công nghiệp
+    </p>
+
+    <h3>Quy Trình Lắp Dựng</h3>
+    <p>
+      <strong>Bước 1:</strong> Khảo sát mặt bằng, tư vấn thiết kế sơ bộ<br>
+      <strong>Bước 2:</strong> Báo giá chi tiết theo hạng mục<br>
+      <strong>Bước 3:</strong> Gia công – lắp dựng khung thép<br>
+      <strong>Bước 4:</strong> Lợp mái, lắp vách tôn<br>
+      <strong>Bước 5:</strong> Hoàn thiện – nghiệm thu – bàn giao
+    </p>
+
+    <h3>Ứng Dụng Nhà Xưởng Công Nghiệp</h3>
+    <p>
+      • Nhà máy sản xuất<br>
+      • Kho bãi – logistics<br>
+      • Xưởng may – xưởng gỗ – xưởng cơ khí<br>
+      • Nhà kho chứa hàng đông lạnh<br>
+      • Xưởng lắp ráp – chế tạo máy
+    </p>
+
+    <h3>Liên Hệ Tư Vấn & Báo Giá</h3>
+    <p>
+      <strong>Hotline:</strong> 0933.585.567 – 0989.499.939<br>
+      Hỗ trợ 24/7 – khảo sát tận nơi – báo giá nhanh.
+    </p>
+  `
+},
+'linh-kien-dien-tu': {
+  title: 'Thu mua linh kiện điện tử – bo mạch điện tử',
+  description: 'Thu mua linh kiện điện tử, bo mạch, mainboard, chip, tụ – điện trở, thiết bị điện tử tồn kho. Giá cao, thu mua tận nơi.',
+  image: './img/sp2.jpg',
+  features: [
+    'Thu mua bo mạch điện tử các loại',
+    'Thu mua linh kiện tồn kho – hàng tháo máy',
+    'Nhận thu gom số lượng lớn – nhỏ',
+    'Giá cao hơn thị trường',
+    'Thanh toán nhanh – uy tín'
+  ],
+  content: `
+    <h3>Thu Mua Linh Kiện Điện Tử – Bo Mạch Giá Cao</h3>
+    <p>
+      Cường Hải chuyên thu mua linh kiện điện tử cũ, bo mạch, mainboard, chip IC, cuộn cảm,
+      điện trở – tụ, dây cáp tín hiệu, nguồn máy, thiết bị điện tử hỏng hoặc tồn kho từ nhà xưởng – cửa hàng.
+      Báo giá nhanh – thu gom tận nơi.
+    </p>
+
+    <h3>Các Loại Linh Kiện Thu Mua</h3>
+    <p>
+      • Bo mạch điện tử – PCB<br>
+      • Mainboard máy tính, main tivi, main công nghiệp<br>
+      • IC – chip – CPU – GPU<br>
+      • Tụ điện – điện trở – cuộn cảm<br>
+      • Bộ nguồn – adapter – biến áp<br>
+      • Linh kiện tháo máy – hàng tồn kho<br>
+      • Dây cáp tín hiệu – cáp nguồn – cáp mạng<br>
+      • Thiết bị điện tử cũ, hỏng, không sử dụng
+    </p>
+
+    <h3>Ưu Điểm Dịch Vụ</h3>
+    <p>
+      ✓ Thu mua tận nơi – không ngại số lượng<br>
+      ✓ Cân tại chỗ – giá cao sát thị trường<br>
+      ✓ Không ép giá – giao dịch minh bạch<br>
+      ✓ Nhận thu gom cho nhà xưởng – kho vật tư<br>
+      ✓ Hỗ trợ xe tải, nhân công bốc xếp
+    </p>
+
+    <h3>Quy Trình Thu Mua</h3>
+    <p>
+      <strong>Bước 1:</strong> Liên hệ – gửi hình ảnh báo giá nhanh<br>
+      <strong>Bước 2:</strong> Khảo sát (nếu số lượng lớn)<br>
+      <strong>Bước 3:</strong> Thu gom tận nơi – cân đo chính xác<br>
+      <strong>Bước 4:</strong> Thanh toán tiền mặt hoặc chuyển khoản<br>
+      <strong>Bước 5:</strong> Vận chuyển – dọn dẹp gọn gàng
+    </p>
+
+    <h3>Liên Hệ Báo Giá</h3>
+    <p>
+      <strong>Hotline:</strong> 0933.585.567 – 0989.499.939<br>
+      Hỗ trợ 24/7 – Thu gom tận nơi toàn quốc.
+    </p>
+  `
+},
+
+
+
+
 
 
 
